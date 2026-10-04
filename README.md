@@ -2,7 +2,9 @@
 
 Sceneuron puts clear cards, captions, and camera-aware controls into a professional video call through OBS Studio. A streamer can use the same system for expressive overlays and reactions.
 
-![Professional video calls are the primary Sceneuron path](docs/graphics/readme-hero.svg)
+**[Visit the Sceneuron website](https://signsofintelligence.tech/)** for the product tour, real screenshots, and theme previews.
+
+[![Alex on a video call with live subtitles in English, Klingon, and Japanese](docs/graphics/subtitles.webp)](https://signsofintelligence.tech/#subtitles)
 
 ## See it without devices or cloud keys
 
@@ -28,7 +30,47 @@ For a real OBS and Stream Deck install, follow the [installation guide](docs/ins
 
 A card can be raised from the editor, a Stream Deck key, an OBS hotkey, a configured hand signal, or voice control. The same live state reaches the editor, OBS overlay, and paired controls. The [product brief](docs/project-brief.md) explains the full user path.
 
-![One action reaches the engine, overlay, and connected control surfaces](docs/graphics/readme-system.svg)
+## See it in action
+
+### Planning poker
+
+Teammates can see who voted, but the values stay hidden until the shared reveal.
+
+[![Animated Sceneuron planning-poker reveal, from hidden votes to the result](docs/graphics/poker-graphite.webp)](https://signsofintelligence.tech/#vote)
+
+### Stream Deck plugin
+
+The custom [Stream Deck plugin](streamdeck/README.md) gives reactions, cards, voice, and automation their own physical keys.
+
+![A physical Stream Deck showing Sceneuron's custom Reactions page](docs/graphics/sd-reactions.webp)
+
+### Image recognition
+
+When scene understanding is enabled, Sceneuron can name an object held up to the camera and show a live scene description.
+
+![Alex holding an iced coffee while Sceneuron labels it and describes the scene](docs/graphics/narrates.webp)
+
+### Reactions
+
+A facepalm can fill the video with a "This meeting could have been an email" reaction.
+
+![A facepalm triggers Sceneuron's email-themed reaction](docs/graphics/reaction.webp)
+
+### Themes
+
+The same overlay can take six different looks. [Try the theme switcher](https://signsofintelligence.tech/#vote).
+
+| Graphite | Hacker |
+| --- | --- |
+| ![Sceneuron overlay in the Graphite theme](docs/graphics/theme-graphite.webp) | ![Sceneuron overlay in the Hacker theme](docs/graphics/theme-hacker.webp) |
+
+| 80s | Windows 95 |
+| --- | --- |
+| ![Sceneuron overlay in the 80s theme](docs/graphics/theme-eighties.webp) | ![Sceneuron overlay in the Windows 95 theme](docs/graphics/theme-windows-95.webp) |
+
+| Classic Mac | Vaporwave |
+| --- | --- |
+| ![Sceneuron overlay in the Classic Mac theme](docs/graphics/theme-classic-mac.webp) | ![Sceneuron overlay in the Vaporwave theme](docs/graphics/theme-vaporwave.webp) |
 
 ## How the parts fit
 
@@ -40,6 +82,8 @@ A card can be raised from the editor, a Stream Deck key, an OBS hotkey, a config
 - Google Gemini or an OpenAI-compatible endpoint can supply optional camera understanding, plans, and translations. Jev and ElevenLabs are separate optional services.
 
 The [system design](docs/design.md) shows the data flow and token boundaries. The [local HTTP guide](docs/control-api.md) maps integration routes.
+
+![One action reaches the engine, overlay, and connected control surfaces](docs/graphics/readme-system.svg)
 
 ## Build and check
 
