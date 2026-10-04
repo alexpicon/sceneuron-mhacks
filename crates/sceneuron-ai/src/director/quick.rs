@@ -3,7 +3,7 @@
 
 //! The quick judge: a thread that asks Jev about each condition whenever the on-device facts
 //! change, so overlays react in well under a second, and that asks the director for a full look
-//! when Jev is unsure or a condition that reports a name turns on.
+//! when Jev cannot settle a condition or a condition that reports a name turns on.
 //!
 //! It runs only while scene understanding is on, with consent, and with a Jev key; without the
 //! key nothing changes. It never runs while the hourly budget is spent, and never judges cued
@@ -26,8 +26,8 @@ use crate::settings::AiSettings;
 const MIN_GAP: Duration = Duration::from_millis(500);
 /// Longest wait after transient failures.
 const MAX_BACKOFF: Duration = Duration::from_secs(30);
-/// A probability between these is unsure, which is worth a full look.
-const UNSURE: (f64, f64) = (0.3, 0.7);
+/// A lower score can mean that local facts missed an object, so the vision model checks it.
+const FULL_LOOK_THRESHOLD: f64 = 0.7;
 
 /// What the quick judge reports for the status.
 #[derive(Clone, Debug, Default, PartialEq)]
@@ -222,16 +222,19 @@ impl Judge {
     }
 
     fn answered(&mut self, judgment: &QuickJudgment, conditions: &[Condition], observed_ms: u64) {
-        let verdicts = judgment
+        let verdicts: Vec<_> = judgment
             .probabilities
             .iter()
+            .filter(|(_, probability)| *probability >= 0.5)
             .map(|(id, probability)| quick_verdict(id, *probability))
             .collect();
-        self.sink.verdicts(verdicts, observed_ms);
-        let unsure = judgment
+        if !verdicts.is_empty() {
+            self.sink.verdicts(verdicts, observed_ms);
+        }
+        let needs_look = judgment
             .probabilities
             .iter()
-            .any(|(_, p)| (UNSURE.0..UNSURE.1).contains(p));
+            .any(|(_, p)| *p < FULL_LOOK_THRESHOLD);
         let needs_name = judgment.probabilities.iter().any(|(id, p)| {
             let was = self.last.iter().find(|(known, _)| known == id).map_or(0.0, |(_, p)| *p);
             let reports_name = conditions.iter().any(|c| &c.id == id && !c.detail.is_empty());
@@ -242,11 +245,11 @@ impl Judge {
         let usage = judgment.usage;
         self.director.post(|inbox| {
             inbox.quick_usage.push((usage, cost));
-            inbox.novel |= unsure || needs_name;
+            inbox.novel |= needs_look || needs_name;
         });
         self.status.calls += 1;
         self.status.latency_ms = Some((judgment.latency_ms * 10.0).round() / 10.0);
-        self.status.message = if unsure || needs_name {
+        self.status.message = if needs_look || needs_name {
             "asked the vision model to take a closer look".to_owned()
         } else {
             String::new()

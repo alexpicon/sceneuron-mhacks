@@ -107,6 +107,22 @@ fn unsure_answers_ask_the_vision_model_for_a_closer_look() {
 }
 
 #[test]
+fn a_low_answer_from_incomplete_facts_asks_vision_without_rejecting_the_condition() {
+    let jev = MockServer::start(answers(0.1, 4));
+    let can = vec![condition("can", "The person holds a drink can.", "")];
+    let (director, sink, vision) = start(&jev, can, quiet_policy());
+    director.offer_frame(gray_frame(32, 18, 100, 0));
+    assert!(wait_until(|| vision.calls() == 1), "the first look");
+    thread::sleep(Duration::from_millis(1_100));
+    director.offer_frame(gray_frame(32, 18, 100, 20));
+    director.hint(facts("frame"), false, 20);
+    assert!(wait_until(|| sink.last_status().is_some_and(|status| status.quick_calls == 1)));
+    assert!(sink.verdicts().is_empty(), "missing facts became a negative verdict");
+    assert!(wait_until(|| vision.calls() == 2), "Jev's low score did not request a full look");
+    director.shutdown();
+}
+
+#[test]
 fn a_condition_that_reports_a_name_gets_a_closer_look_when_it_turns_on() {
     let jev = MockServer::start(answers(0.95, 4));
     let (director, _, vision) = start(&jev, pet_condition(), quiet_policy());
