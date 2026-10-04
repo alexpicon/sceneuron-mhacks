@@ -3,8 +3,8 @@
 
 /* Sceneuron overlay floods: when a snapshot carries a flood this page has not played, fills the whole canvas with
    its preset's emojis, which rain down and burst for its few seconds, above every element, with its banner line
-   large in the middle when it has one (see flood-banner.js), then removes them; the Graphite theme throws a burst
-   of line icons instead (see flood-burst.js). The presets come from reaction-presets.js. Shared by the overlay
+   large in the middle when it has one (see flood-banner.js), then removes them. The presets come from
+   reaction-presets.js. Shared by the overlay
    page and the editor preview; the layout is planned by pure functions that the Node tests check. */
 (function () {
   "use strict";
@@ -170,12 +170,7 @@
       "pointer-events": "none",
       "z-index": "2147483647",
     });
-    const theme = root.getAttribute("data-theme") === "graphite" ? "graphite" : null;
-    const reduced = options && "reducedMotion" in options ? options.reducedMotion : Burst.prefersReducedMotion(doc);
-    const items = theme ? [] : planFlood(flood.flood, canvas, flood.nonce);
-    if (theme) {
-      Burst.drawBurst(layer, Burst.planPreset(presetOf(flood.flood), size, flood.nonce), reduced, setStyles);
-    }
+    const items = planFlood(flood.flood, canvas, flood.nonce);
     for (const item of items) {
       const node = doc.createElement("span");
       node.textContent = item.emoji;
@@ -194,7 +189,7 @@
         node.animate(keyframes(item), { duration: item.duration, delay: item.delay, easing, fill: "both" });
       }
     }
-    const banner = Banner.planBanner(presetOf(flood.flood), size, theme);
+    const banner = Banner.planBanner(presetOf(flood.flood), size);
     if (banner) {
       layer.appendChild(Banner.createBanner(doc, banner, duration, setStyles));
     }

@@ -3,9 +3,7 @@
 
 /* Sceneuron overlay floods: the banner line a preset such as "This meeting could have been an email" shows large in
    the middle of the canvas, between its first and last emoji, above the flood's emojis. It pops in, holds, and fades
-   out within the flood. In the Graphite theme it is a graphite pill with an amber edge and no emoji, in the upper
-   third of the canvas, clear of the faces in its middle. Planned by pure functions that the Node tests check;
-   flood.js draws it. */
+   out within the flood. Planned by pure functions that the Node tests check; flood.js draws it. */
 (function () {
   "use strict";
 
@@ -18,8 +16,6 @@
   /** Estimated advance of a letter and of an emoji, in ems, for a bold face; generous so a line rarely wraps. */
   const LETTER_EM = 0.6;
   const EMOJI_EM = 1.3;
-  /** The Graphite banner's font size and widest box, as shares of the canvas, and the center of its box. */
-  const GRAPHITE = { fontShare: 0.06, widthShare: 0.7, centerShare: 0.17 };
 
   function round(value) {
     return Math.round(value * 10) / 10;
@@ -28,15 +24,11 @@
   /**
    * The banner of `preset` on a canvas of `size` (`{width, height}` in pixels), or null when the preset shows none:
    * its text, between the preset's first and last emoji, the box's width and left edge, centered across the canvas,
-   * and its font size, padding, corners, border, and colors. With `theme` "graphite" it is a pill of words alone
-   * centered in the upper third.
+   * and its font size, padding, corners, border, and colors.
    */
-  function planBanner(preset, size, theme) {
+  function planBanner(preset, size) {
     if (!preset || typeof preset.banner !== "string" || !preset.banner) {
       return null;
-    }
-    if (theme === "graphite") {
-      return planGraphite(preset.banner, size);
     }
     const emojis = Array.isArray(preset.emojis) ? preset.emojis : [];
     const first = emojis[0] || "";
@@ -57,28 +49,6 @@
       radius: round(fontSize * 0.4),
       border: round(Math.max(2, fontSize * 0.07)),
       background: /^#[0-9a-f]{6}$/i.test(preset.color) ? preset.color : "#1d4ed8",
-    };
-  }
-
-  function planGraphite(text, size) {
-    const fontSize = round(size.height * GRAPHITE.fontShare);
-    const paddingX = round(fontSize * 0.75);
-    const paddingY = round(fontSize * 0.35);
-    const natural = [...text].length * LETTER_EM * fontSize + 2 * paddingX;
-    const width = round(Math.min(size.width * GRAPHITE.widthShare, natural));
-    return {
-      text,
-      width,
-      left: round((size.width - width) / 2),
-      top: round(size.height * GRAPHITE.centerShare),
-      fontSize,
-      paddingX,
-      paddingY,
-      radius: round(fontSize * 2),
-      border: round(Math.min(2, Math.max(1, size.height / 540))),
-      background: "linear-gradient(180deg, #2a2a2c, #1c1c1e)",
-      edge: "#d6a76c",
-      color: "#f2f0ed",
     };
   }
 

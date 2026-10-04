@@ -161,7 +161,6 @@ ${R} .sn-on-air .sn-body::before{content:"";flex:none;width:.42em;height:.42em;m
 background:${C.calm}}
 ${R} .sn-live .sn-body::before{background:${C.amber};box-shadow:0 0 0 .2em ${C.halo}}
 ${R} .sn-clock .sn-body{color:${C.muted};font-variant-numeric:tabular-nums;letter-spacing:.02em}
-${R} .sn-flood-banner{--sn-banner-panel:${C.canvas};--sn-banner-edge:${C.amber};--sn-banner-text:${C.text}}
 ${cards}`;
 
   const theme = {

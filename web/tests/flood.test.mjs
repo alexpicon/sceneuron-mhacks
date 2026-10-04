@@ -15,6 +15,7 @@ import { element } from "./render-fixtures.mjs";
 
 const require = createRequire(import.meta.url);
 const F = require("../flood.js");
+const B = require("../flood-banner.js");
 const R = require("../render.js");
 const { PRESETS } = require("../reaction-presets.js");
 const TONGUE = PRESETS[0].emojis;
@@ -167,4 +168,19 @@ describe("update", () => {
     assert.equal(F.update(two.root, snapshot(tongue(1, 100), 100), two.options), false);
     assert.deepEqual(layers(two.root), []);
   });
+});
+
+test("Graphite uses the shared colorful emoji treatment for every reaction", () => {
+  for (const preset of PRESETS) {
+    const { root, options } = stage();
+    root.setAttribute("data-theme", "graphite");
+    F.update(root, snapshot(null, 0), options);
+    assert.equal(F.update(root, snapshot({ flood: preset.id, nonce: 1, at_ms: 100 }, 100), options), true);
+    const [layer] = layers(root);
+    const banner = layer.children.find((child) => child.classList.contains("sn-flood-banner"));
+    const emojis = layer.children.filter((child) => child !== banner);
+    assert.equal(emojis.length, 94, preset.id);
+    assert.ok(emojis.every((child) => preset.emojis.includes(child.textContent)), preset.id);
+    assert.deepEqual(B.planBanner(preset, CANVAS, "graphite"), B.planBanner(preset, CANVAS), preset.id);
+  }
 });
