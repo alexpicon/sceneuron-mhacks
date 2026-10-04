@@ -1,0 +1,10 @@
+# Copyright (c) 2026 Alexander Picon, Chaski AI (https://chaski.ai). All rights reserved.
+# Proprietary software; see LICENSE.
+
+* text=auto eol=lf
+*.sh text eol=lf
+*.onnx binary
+*.rgb binary
+*.woff2 binary
+*.ttf binary
+*.otf binary

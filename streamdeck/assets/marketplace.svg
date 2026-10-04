@@ -1,0 +1,14 @@
+<!-- Copyright (c) 2026 Alexander Picon, Chaski AI (https://chaski.ai). All rights reserved. -->
+<!-- Proprietary software; see LICENSE. -->
+
+<svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256">
+  <rect width="256" height="256" rx="48" fill="#161a22"/>
+  <rect x="50" y="62" width="104" height="140" rx="14" fill="#1d4ed8" transform="rotate(-14 102 132)"/>
+  <rect x="78" y="52" width="104" height="140" rx="14" fill="#facc15" transform="rotate(-2 130 122)"/>
+  <rect x="102" y="66" width="104" height="140" rx="14" fill="#ffffff" transform="rotate(10 154 136)"/>
+  <rect x="112" y="76" width="84" height="120" rx="8" fill="none" stroke="#161a22" stroke-width="5" transform="rotate(10 154 136)"/>
+  <g transform="rotate(10 154 136)" fill="#161a22">
+    <rect x="128" y="112" width="52" height="12" rx="6"/>
+    <rect x="128" y="134" width="40" height="12" rx="6"/>
+  </g>
+</svg>

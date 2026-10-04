@@ -1,0 +1,218 @@
+/* Copyright (c) 2026 Alexander Picon, Chaski AI (https://chaski.ai). All rights reserved. */
+/* Proprietary software; see LICENSE. */
+
+/* Sceneuron editor styles: the assistant box, its progress and plan review, and the AI's entries in the
+   events log. */
+
+/* Assistant */
+
+.assistant {
+  padding: 12px;
+  border: 1px solid #5c4a33;
+  border-radius: 10px;
+  background: radial-gradient(120% 160% at 0% 0%, #3a3125 0%, var(--raised) 50%, var(--panel) 100%);
+}
+
+.assistant-form > label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 600;
+}
+
+.assistant-input {
+  display: flex;
+  align-items: stretch;
+  gap: 8px;
+}
+
+.assistant-input textarea {
+  flex: 1;
+  min-height: 58px;
+}
+
+.assistant-input button {
+  min-width: 104px;
+}
+
+.assistant-options {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px 12px;
+  margin-top: 8px;
+}
+
+.assistant-options .check {
+  margin: 0;
+}
+
+.assistant-form .hint {
+  margin: 6px 0 0;
+}
+
+.invite {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+  padding: 10px 12px;
+  border: 1px dashed var(--accent);
+  border-radius: 8px;
+  background: #262220;
+}
+
+.invite[hidden] {
+  display: none;
+}
+
+.invite p {
+  flex: 1;
+  margin: 0;
+}
+
+.assistant-result:not(:empty) {
+  margin-top: 12px;
+}
+
+/* Progress, failures, and plans */
+
+.plan-progress,
+.plan-error,
+.plan {
+  padding: 12px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--panel);
+}
+
+.plan-error {
+  border-color: var(--danger-strong);
+  background: #2a1020;
+}
+
+.plan {
+  border-color: var(--accent-strong);
+}
+
+.progress-bar {
+  position: relative;
+  height: 4px;
+  margin-bottom: 10px;
+  overflow: hidden;
+  border-radius: 999px;
+  background: var(--field);
+}
+
+.progress-bar span {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: -35%;
+  width: 35%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, transparent, var(--accent), transparent);
+  animation: plan-progress 1.4s ease-in-out infinite;
+}
+
+@keyframes plan-progress {
+  to {
+    left: 100%;
+  }
+}
+
+.plan h3 {
+  margin: 0 0 6px;
+}
+
+/* The heading takes focus when a plan arrives so keyboard and screen reader users land on it; it is not a control. */
+.plan h3:focus {
+  outline: none;
+}
+
+.plan-summary {
+  font-size: 14px;
+}
+
+.plan-ops {
+  margin: 0 0 8px;
+  padding: 0;
+  list-style: none;
+}
+
+.plan-op {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  padding: 6px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.op-verb {
+  flex: none;
+  min-width: 68px;
+  padding: 0 6px;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.op-verb[data-kind="add"] {
+  background: #123726;
+  color: var(--ok);
+}
+
+.op-verb[data-kind="change"] {
+  background: #463a2a;
+  color: var(--accent-text);
+}
+
+.op-verb[data-kind="remove"] {
+  background: #3a1422;
+  color: var(--danger);
+}
+
+.plan-note {
+  color: var(--warn);
+}
+
+.button-row.end {
+  justify-content: flex-end;
+  margin-top: 12px;
+}
+
+/* AI entries in the events log */
+
+.event-log li[data-source="ai"] {
+  border-left: 3px solid var(--accent);
+  background: linear-gradient(90deg, #3a3125, transparent 75%);
+}
+
+.event-log li[data-source="ai"] .event-time {
+  padding-left: 5px;
+}
+
+.event-log li[data-source="ai"] .event-source {
+  color: var(--accent-text);
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.event-log li[data-source="ai"] .event-what {
+  font-weight: 600;
+}
+
+.event-why {
+  color: var(--muted);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .progress-bar span {
+    left: 0;
+    width: 100%;
+    animation: none;
+    opacity: 0.6;
+  }
+}

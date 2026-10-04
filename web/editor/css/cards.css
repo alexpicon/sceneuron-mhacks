@@ -1,0 +1,183 @@
+/* Copyright (c) 2026 Alexander Picon, Chaski AI (https://chaski.ai). All rights reserved. */
+/* Proprietary software; see LICENSE. */
+
+/* Sceneuron editor styles: the Cards tab: decks with their card buttons and card editor, the pack list, the
+   shared room, and pairing Stream Decks. */
+
+/* Decks */
+
+.deck {
+  margin-bottom: 12px;
+  padding: 10px 12px 4px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+}
+
+.deck h4 {
+  margin-bottom: 8px;
+}
+
+.deck-status {
+  font-weight: 600;
+}
+
+/* Each button takes its card's colors from deck-cards.js, like the card on the overlay. */
+.card-buttons {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(76px, 1fr));
+  gap: 6px;
+  margin-bottom: 8px;
+}
+
+.card-button {
+  min-height: 44px;
+  padding: 4px 6px;
+  border: 2px solid var(--border);
+  background: var(--card-background, var(--raised));
+  color: var(--card-color, var(--text));
+  font-weight: 600;
+  line-height: 1.2;
+  overflow-wrap: anywhere;
+}
+
+.card-button[aria-pressed="true"] {
+  border-color: #ffffff;
+  box-shadow: 0 0 0 2px var(--accent);
+}
+
+.card-up {
+  display: none;
+}
+
+.card-button[aria-pressed="true"] .card-up {
+  display: block;
+  font-size: 11px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.card-button:hover:not(:disabled) {
+  border-color: var(--focus);
+}
+
+.deck .button-row {
+  margin-bottom: 10px;
+}
+
+.card-editor {
+  margin-bottom: 10px;
+  padding: 6px 10px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: var(--raised);
+}
+
+.card-editor summary {
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.card-editor[open] summary {
+  margin-bottom: 8px;
+}
+
+/* What a card's hand signal shares with other cards, under its list: warnings, then notes. */
+.signal-notes {
+  margin: -4px 0 10px;
+  padding-left: 18px;
+}
+
+.signal-notes li {
+  margin: 0 0 4px;
+}
+
+/* Packs */
+
+.pack-list {
+  margin: 0 0 8px;
+  padding: 0;
+  list-style: none;
+}
+
+.pack-list li {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 8px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.pack-list p {
+  margin: 2px 0 0;
+}
+
+.pack-name {
+  font-weight: 600;
+}
+
+/* Room */
+
+.room-code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.room-server {
+  margin-bottom: 8px;
+}
+
+.room-server summary {
+  cursor: pointer;
+}
+
+.room-joined {
+  margin: 8px 0;
+  padding: 10px 12px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+}
+
+.room-people {
+  margin: 0 0 8px;
+  padding-left: 20px;
+}
+
+/* The words say whether someone voted; the mark only repeats it for the eye. */
+.room-people li[data-voted="true"]::marker {
+  content: "✓ ";
+  color: var(--ok);
+}
+
+.room-spread {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+/* Stream Deck */
+
+.pairing {
+  margin: 8px 0;
+  padding: 10px 12px;
+  border: 1px solid var(--accent-strong);
+  border-radius: 8px;
+  background: var(--raised);
+}
+
+.pairing-digits {
+  display: block;
+  color: var(--accent-text);
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 28px;
+  letter-spacing: 0.08em;
+}
+
+.pairing-steps {
+  margin: 0 0 4px;
+  padding-left: 20px;
+}
+
+.pairing-steps li {
+  margin-bottom: 4px;
+}

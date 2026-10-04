@@ -1,0 +1,59 @@
+# Copyright (c) 2026 Alexander Picon, Chaski AI (https://chaski.ai). All rights reserved.
+# Proprietary software; see LICENSE.
+
+[package]
+name = "sceneuron-vision-apple"
+description = "A Sceneuron perceiver built on Apple's Vision framework, for macOS"
+version.workspace = true
+authors.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license-file.workspace = true
+repository.workspace = true
+publish.workspace = true
+
+[dependencies]
+sceneuron-vision.workspace = true
+
+[target.'cfg(target_os = "macos")'.dependencies]
+objc2 = { workspace = true, features = ["exception"] }
+objc2-core-foundation = { workspace = true, features = ["std", "CFCGTypes", "CFData", "CFString"] }
+objc2-core-graphics = { workspace = true, features = ["std", "objc2", "CGColorSpace", "CGDataProvider", "CGImage"] }
+objc2-foundation = { workspace = true, features = [
+    "std",
+    "NSArray",
+    "NSDictionary",
+    "NSEnumerator",
+    "NSError",
+    "NSException",
+    "NSObject",
+    "NSString",
+] }
+objc2-vision = { workspace = true, features = [
+    "std",
+    "objc2-core-foundation",
+    "objc2-core-graphics",
+    "VNClassifyImageRequest",
+    "VNDetectedPoint",
+    "VNDetectFaceLandmarksRequest",
+    "VNDetectFaceRectanglesRequest",
+    "VNDetectHumanBodyPoseRequest",
+    "VNDetectHumanHandPoseRequest",
+    "VNFaceLandmarks",
+    "VNFaceObservationAccepting",
+    "VNGeometry",
+    "VNObservation",
+    "VNRecognizeAnimalsRequest",
+    "VNRecognizeTextRequest",
+    "VNRequest",
+    "VNRequestHandler",
+    "VNTypes",
+] }
+
+[target.'cfg(target_os = "macos")'.dev-dependencies]
+objc2-core-foundation = { workspace = true, features = ["CFAttributedString", "CFDictionary"] }
+objc2-core-graphics = { workspace = true, features = ["CGBitmapContext", "CGColor", "CGContext"] }
+objc2-core-text = { workspace = true, features = ["std", "objc2-core-graphics", "CTFont", "CTLine", "CTStringAttributes"] }
+
+[lints]
+workspace = true

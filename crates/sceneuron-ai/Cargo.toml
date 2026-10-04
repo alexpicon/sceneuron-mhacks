@@ -1,0 +1,68 @@
+# Copyright (c) 2026 Alexander Picon, Chaski AI (https://chaski.ai). All rights reserved.
+# Proprietary software; see LICENSE.
+
+[package]
+name = "sceneuron-ai"
+description = "Vision and planner model clients, call scheduling, and the AI director for Sceneuron"
+version.workspace = true
+authors.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license-file.workspace = true
+repository.workspace = true
+publish.workspace = true
+
+[features]
+# Hosting in a Sceneuron hub and server, for the OBS plugin and the development server.
+hub = ["dep:sceneuron-server"]
+
+[dependencies]
+base64.workspace = true
+jpeg-encoder.workspace = true
+log.workspace = true
+sceneuron-core.workspace = true
+sceneuron-server = { workspace = true, optional = true }
+sceneuron-voice.workspace = true
+serde.workspace = true
+serde_json.workspace = true
+sha2.workspace = true
+ureq.workspace = true
+
+[dev-dependencies]
+jpeg-decoder.workspace = true
+sceneuron-voice = { workspace = true, features = ["fake"] }
+
+[lints]
+workspace = true
+
+[[test]]
+name = "hub"
+required-features = ["hub"]
+
+[[test]]
+name = "hub_commands"
+required-features = ["hub"]
+
+[[test]]
+name = "hub_speech"
+required-features = ["hub"]
+
+[[test]]
+name = "hub_voice"
+required-features = ["hub"]
+
+[[test]]
+name = "hub_subtitles"
+required-features = ["hub"]
+
+[[test]]
+name = "hub_subtitles_voice"
+required-features = ["hub"]
+
+[[test]]
+name = "hub_subtitles_detected"
+required-features = ["hub"]
+
+[[test]]
+name = "hub_translations"
+required-features = ["hub"]

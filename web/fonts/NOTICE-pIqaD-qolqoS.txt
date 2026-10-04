@@ -1,0 +1,9 @@
+Acknowledgements from the pIqaD qolqoS README (https://github.com/dadap/pIqaD-fonts):
+
+Klingon is a registered trademark of CBS Studios Inc. The shapes of the pIqaD glyphs are based on
+the scheme endorsed by the Klingon Language Institute.
+
+The glyph at U+F8FF, listed in the ConScript Unicode Registry as KLINGON MUMMIFICATION GLYPH, was
+copied from the "pIqaD" font by qurgh, published at https://hol.kag.org, which asks that its page
+be mentioned when its fonts are used in a commercial product: https://hol.kag.org. Sceneuron never
+shows that glyph; its overlay uses the font for U+F8D0 to U+F8FE only.

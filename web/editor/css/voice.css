@@ -1,0 +1,39 @@
+/* Copyright (c) 2026 Alexander Picon, Chaski AI (https://chaski.ai). All rights reserved. */
+/* Proprietary software; see LICENSE. */
+
+/* Sceneuron editor: the Voice section's typed command and its list of what can be said. */
+
+.voice-command {
+  margin: 0 0 12px;
+}
+
+.voice-command label {
+  display: block;
+  margin-bottom: 4px;
+  font-weight: 600;
+}
+
+.voice-guide-group + .voice-guide-group {
+  margin-top: 12px;
+}
+
+.voice-guide-group h4 {
+  margin: 0 0 2px;
+}
+
+.voice-guide-group .hint {
+  margin: 0 0 4px;
+}
+
+.voice-guide-group ul {
+  margin: 0;
+  padding-left: 18px;
+}
+
+.voice-guide-group li + li {
+  margin-top: 2px;
+}
+
+.voice-say {
+  font-weight: 600;
+}

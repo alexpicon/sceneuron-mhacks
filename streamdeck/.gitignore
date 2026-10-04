@@ -1,0 +1,13 @@
+# Copyright (c) 2026 Alexander Picon, Chaski AI (https://chaski.ai). All rights reserved.
+# Proprietary software; see LICENSE.
+
+node_modules/
+# Built by `npm run build`, and written by Stream Deck while the plugin runs.
+*.sdPlugin/bin/
+*.sdPlugin/logs/
+*.sdPlugin/profiles/
+# Packages made by `npm run package`.
+dist/
+*.streamDeckPlugin
+# Working folders of plugins started by the tests.
+/.test-runs/

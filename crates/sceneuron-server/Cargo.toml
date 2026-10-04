@@ -1,0 +1,24 @@
+# Copyright (c) 2026 Alexander Picon, Chaski AI (https://chaski.ai). All rights reserved.
+# Proprietary software; see LICENSE.
+
+[package]
+name = "sceneuron-server"
+description = "Shared runtime hub and the local HTTP server for the Sceneuron editor and overlay"
+version.workspace = true
+authors.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license-file.workspace = true
+repository.workspace = true
+publish.workspace = true
+
+[dependencies]
+getrandom.workspace = true
+hmac.workspace = true
+sceneuron-core.workspace = true
+serde.workspace = true
+serde_json.workspace = true
+sha2.workspace = true
+
+[lints]
+workspace = true

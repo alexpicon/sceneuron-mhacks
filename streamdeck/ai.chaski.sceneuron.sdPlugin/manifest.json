@@ -1,0 +1,195 @@
+{
+  "$schema": "https://schemas.elgato.com/streamdeck/plugins/manifest.json",
+  "UUID": "ai.chaski.sceneuron",
+  "Name": "Sceneuron",
+  "Version": "0.4.0.0",
+  "Author": "Chaski AI",
+  "URL": "https://chaski.ai",
+  "Description": "Raise Sceneuron cards in your stream or video call, play reactions such as \"This meeting could have been an email\", show or hide overlays, pause automation, hold push to talk, and run a shared planning poker room.",
+  "Category": "Sceneuron",
+  "CategoryIcon": "imgs/plugin/category",
+  "Icon": "imgs/plugin/marketplace",
+  "CodePath": "bin/plugin.js",
+  "SDKVersion": 3,
+  "Software": {
+    "MinimumVersion": "7.1"
+  },
+  "OS": [
+    {
+      "Platform": "mac",
+      "MinimumVersion": "13"
+    }
+  ],
+  "Nodejs": {
+    "Version": "24"
+  },
+  "Actions": [
+    {
+      "UUID": "ai.chaski.sceneuron.card",
+      "Name": "Raise a card",
+      "Tooltip": "Shows a card from a Sceneuron deck, or lowers it when it is up. The key looks like the card.",
+      "Icon": "imgs/actions/card/icon",
+      "PropertyInspectorPath": "ui/inspector.html",
+      "Controllers": ["Keypad"],
+      "UserTitleEnabled": false,
+      "States": [
+        {
+          "Image": "imgs/actions/card/key",
+          "ShowTitle": false
+        }
+      ]
+    },
+    {
+      "UUID": "ai.chaski.sceneuron.lower",
+      "Name": "Lower cards",
+      "Tooltip": "Lowers the card that is up in one deck, or in every deck.",
+      "Icon": "imgs/actions/lower/icon",
+      "PropertyInspectorPath": "ui/inspector.html",
+      "Controllers": ["Keypad"],
+      "UserTitleEnabled": false,
+      "States": [
+        {
+          "Image": "imgs/actions/lower/key",
+          "ShowTitle": false
+        }
+      ]
+    },
+    {
+      "UUID": "ai.chaski.sceneuron.element",
+      "Name": "Show or hide",
+      "Tooltip": "Shows or hides a Sceneuron overlay element and holds that until it is released.",
+      "Icon": "imgs/actions/element/icon",
+      "PropertyInspectorPath": "ui/inspector.html",
+      "Controllers": ["Keypad"],
+      "UserTitleEnabled": false,
+      "States": [
+        {
+          "Image": "imgs/actions/element/key",
+          "ShowTitle": false
+        }
+      ]
+    },
+    {
+      "UUID": "ai.chaski.sceneuron.automation",
+      "Name": "Pause automation",
+      "Tooltip": "Pauses or resumes Sceneuron's rules and camera signals.",
+      "Icon": "imgs/actions/automation/icon",
+      "PropertyInspectorPath": "ui/inspector.html",
+      "Controllers": ["Keypad"],
+      "DisableAutomaticStates": true,
+      "UserTitleEnabled": false,
+      "States": [
+        {
+          "Name": "Automation on",
+          "Image": "imgs/actions/automation/key",
+          "ShowTitle": false
+        },
+        {
+          "Name": "Automation paused",
+          "Image": "imgs/actions/automation/key-paused",
+          "ShowTitle": false
+        }
+      ]
+    },
+    {
+      "UUID": "ai.chaski.sceneuron.dial",
+      "Name": "Card dial",
+      "Tooltip": "Turn to show a deck's next or previous card, then press to lower it or raise it again.",
+      "Icon": "imgs/actions/dial/icon",
+      "PropertyInspectorPath": "ui/inspector.html",
+      "Controllers": ["Encoder"],
+      "Encoder": {
+        "Icon": "imgs/actions/dial/key",
+        "layout": "layouts/card.json",
+        "TriggerDescription": {
+          "Rotate": "Show the next or previous card",
+          "Push": "Raise or lower it",
+          "Touch": "Raise or lower it",
+          "LongTouch": "Lower the deck"
+        }
+      },
+      "States": [
+        {
+          "Image": "imgs/actions/dial/key"
+        }
+      ]
+    },
+    {
+      "UUID": "ai.chaski.sceneuron.talk",
+      "Name": "Push to talk",
+      "Tooltip": "Hold while you speak to Sceneuron's voice control, then let go. Works while voice control is on in the editor.",
+      "Icon": "imgs/actions/talk/icon",
+      "PropertyInspectorPath": "ui/inspector.html",
+      "Controllers": ["Keypad"],
+      "SupportedInMultiActions": false,
+      "UserTitleEnabled": false,
+      "States": [
+        {
+          "Image": "imgs/actions/talk/key",
+          "ShowTitle": false
+        }
+      ]
+    },
+    {
+      "UUID": "ai.chaski.sceneuron.reveal",
+      "Name": "Reveal votes",
+      "Tooltip": "Shows everyone's votes at once in the shared planning poker room.",
+      "Icon": "imgs/actions/reveal/icon",
+      "PropertyInspectorPath": "ui/inspector.html",
+      "Controllers": ["Keypad"],
+      "UserTitleEnabled": false,
+      "States": [
+        {
+          "Image": "imgs/actions/reveal/key",
+          "ShowTitle": false
+        }
+      ]
+    },
+    {
+      "UUID": "ai.chaski.sceneuron.next-round",
+      "Name": "Next round",
+      "Tooltip": "Lowers every card in the shared planning poker room and clears the votes for the next round.",
+      "Icon": "imgs/actions/next-round/icon",
+      "PropertyInspectorPath": "ui/inspector.html",
+      "Controllers": ["Keypad"],
+      "UserTitleEnabled": false,
+      "States": [
+        {
+          "Image": "imgs/actions/next-round/key",
+          "ShowTitle": false
+        }
+      ]
+    },
+    {
+      "UUID": "ai.chaski.sceneuron.reaction",
+      "Name": "Reaction",
+      "Tooltip": "Plays a reaction on the overlay at once, such as \"This meeting could have been an email\" with emojis. The key lights up while it plays.",
+      "Icon": "imgs/actions/reaction/icon",
+      "PropertyInspectorPath": "ui/inspector.html",
+      "Controllers": ["Keypad"],
+      "UserTitleEnabled": false,
+      "States": [
+        {
+          "Image": "imgs/actions/reaction/key",
+          "ShowTitle": false
+        }
+      ]
+    }
+  ],
+  "Profiles": [
+    {
+      "Name": "profiles/sceneuron-stream-deck",
+      "DeviceType": 0,
+      "Readonly": false,
+      "DontAutoSwitchWhenInstalled": false,
+      "AutoInstall": true
+    },
+    {
+      "Name": "profiles/sceneuron-stream-deck-xl",
+      "DeviceType": 2,
+      "Readonly": false,
+      "DontAutoSwitchWhenInstalled": false,
+      "AutoInstall": true
+    }
+  ]
+}

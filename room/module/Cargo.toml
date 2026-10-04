@@ -1,0 +1,25 @@
+# Copyright (c) 2026 Alexander Picon, Chaski AI (https://chaski.ai). All rights reserved.
+# Proprietary software; see LICENSE.
+
+[package]
+name = "sceneuron-room-module"
+description = "The SpacetimeDB module behind Sceneuron's shared planning poker room"
+version = "0.1.0"
+authors = ["Alexander Picon", "Chaski AI (https://chaski.ai)"]
+edition = "2024"
+# The spacetimedb 2.10.2 crates need Rust 1.96; the workspace itself needs only 1.91.
+rust-version = "1.96"
+license-file = "../../LICENSE"
+repository = "https://github.com/alexpicon/sceneuron"
+publish = false
+
+# Its own workspace, with its own Cargo.lock: the module builds for wasm32 with the spacetime CLI,
+# and the empty table stops Cargo from looking for a workspace in the directories above.
+[workspace]
+
+[lib]
+crate-type = ["cdylib", "rlib"]
+
+[dependencies]
+log = "0.4"
+spacetimedb = "=2.10.2"

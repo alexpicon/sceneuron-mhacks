@@ -1,0 +1,33 @@
+# Copyright (c) 2026 Alexander Picon, Chaski AI (https://chaski.ai). All rights reserved.
+# Proprietary software; see LICENSE.
+
+[package]
+name = "sceneuron-voice"
+description = "Voice input for Sceneuron: audio conversion and the ElevenLabs Scribe realtime speech-to-text client"
+version.workspace = true
+authors.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license-file.workspace = true
+repository.workspace = true
+publish.workspace = true
+
+[features]
+# The in-process stand-in for the Scribe server, for tests only; never in a shipped build.
+fake = []
+
+[dependencies]
+base64.workspace = true
+log.workspace = true
+rustls.workspace = true
+serde.workspace = true
+serde_json.workspace = true
+tungstenite.workspace = true
+webpki-roots.workspace = true
+
+[dev-dependencies]
+# The crate's own tests talk to the fake server.
+sceneuron-voice = { workspace = true, features = ["fake"] }
+
+[lints]
+workspace = true

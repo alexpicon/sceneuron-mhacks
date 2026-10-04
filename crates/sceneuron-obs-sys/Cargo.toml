@@ -1,0 +1,19 @@
+# Copyright (c) 2026 Alexander Picon, Chaski AI (https://chaski.ai). All rights reserved.
+# Proprietary software; see LICENSE.
+
+[package]
+name = "sceneuron-obs-sys"
+description = "Hand-written bindings to the libobs and OBS frontend C APIs used by Sceneuron"
+version.workspace = true
+authors.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license-file.workspace = true
+repository.workspace = true
+publish.workspace = true
+
+[dependencies]
+
+
+[lints]
+workspace = true

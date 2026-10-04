@@ -1,0 +1,13 @@
+# Copyright (c) 2026 Alexander Picon, Chaski AI (https://chaski.ai). All rights reserved.
+# Proprietary software; see LICENSE.
+
+/target
+/room/module/target
+/dist
+.DS_Store
+# Optional API keys; .env.example documents the names.
+.env
+.env.*
+!.env.example
+# Settings of the development server's --ai mode, which can hold an API key.
+/.sceneuron/

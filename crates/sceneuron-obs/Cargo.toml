@@ -1,0 +1,35 @@
+# Copyright (c) 2026 Alexander Picon, Chaski AI (https://chaski.ai). All rights reserved.
+# Proprietary software; see LICENSE.
+
+[package]
+name = "sceneuron-obs"
+description = "The Sceneuron OBS plugin module"
+version.workspace = true
+authors.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license-file.workspace = true
+repository.workspace = true
+publish.workspace = true
+
+[lib]
+name = "sceneuron"
+crate-type = ["cdylib", "rlib"]
+
+[dependencies]
+log.workspace = true
+sceneuron-ai = { workspace = true, features = ["hub"] }
+sceneuron-core.workspace = true
+sceneuron-obs-sys.workspace = true
+sceneuron-room.workspace = true
+sceneuron-server.workspace = true
+sceneuron-vision.workspace = true
+sceneuron-voice.workspace = true
+serde.workspace = true
+serde_json.workspace = true
+
+[target.'cfg(target_os = "macos")'.dependencies]
+sceneuron-vision-apple.workspace = true
+
+[lints]
+workspace = true

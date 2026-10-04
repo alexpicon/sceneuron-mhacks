@@ -1,0 +1,25 @@
+# Copyright (c) 2026 Alexander Picon, Chaski AI (https://chaski.ai). All rights reserved.
+# Proprietary software; see LICENSE.
+
+[package]
+name = "sceneuron-room"
+description = "The shared planning poker room: hidden votes through SpacetimeDB, covered and revealed cards in the hub"
+version.workspace = true
+authors.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license-file.workspace = true
+repository.workspace = true
+publish.workspace = true
+
+[dependencies]
+log.workspace = true
+rustls.workspace = true
+sceneuron-core.workspace = true
+sceneuron-server.workspace = true
+serde_json.workspace = true
+tungstenite.workspace = true
+webpki-roots.workspace = true
+
+[lints]
+workspace = true

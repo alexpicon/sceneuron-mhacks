@@ -1,0 +1,880 @@
+{
+  "version": 4,
+  "canvas": {
+    "width": 1920,
+    "height": 1080
+  },
+  "theme": "graphite",
+  "elements": [
+    {
+      "id": "brb",
+      "name": "Be right back",
+      "kind": "text",
+      "props": {
+        "x": 560.0,
+        "y": 440.0,
+        "width": 800.0,
+        "height": 200.0,
+        "visible": false,
+        "text": "Be right back",
+        "font_size": 96.0,
+        "bold": true,
+        "color": "#ffffff",
+        "background": "#141428cc",
+        "border_color": "#9b5cffff",
+        "border_width": 6.0,
+        "corner_radius": 32.0,
+        "opacity": 1.0,
+        "align": "center",
+        "idle": "glow",
+        "enter": "pop"
+      }
+    },
+    {
+      "id": "name-label",
+      "name": "Name label",
+      "kind": "text",
+      "props": {
+        "x": 7.0,
+        "y": 33.0,
+        "width": 640.0,
+        "height": 110.0,
+        "visible": true,
+        "text": "Sceneuron",
+        "font_size": 56.0,
+        "bold": true,
+        "color": "#ffffff",
+        "background": "#9b5cffdd",
+        "border_color": "#00000000",
+        "border_width": 0.0,
+        "corner_radius": 18.0,
+        "opacity": 1.0,
+        "align": "center",
+        "idle": "none",
+        "enter": "slide-up"
+      }
+    },
+    {
+      "id": "cam-frame",
+      "name": "Camera frame",
+      "kind": "frame",
+      "props": {
+        "x": 1260.0,
+        "y": 660.0,
+        "width": 620.0,
+        "height": 360.0,
+        "visible": true,
+        "text": "",
+        "font_size": 48.0,
+        "bold": true,
+        "color": "#ffffff",
+        "background": "#00000000",
+        "border_color": "#9b5cffff",
+        "border_width": 8.0,
+        "corner_radius": 24.0,
+        "opacity": 1.0,
+        "align": "center",
+        "idle": "glow",
+        "enter": "fade"
+      }
+    },
+    {
+      "id": "live-description",
+      "name": "Live description",
+      "kind": "text",
+      "props": {
+        "x": 47.0,
+        "y": 540.0,
+        "width": 1100.0,
+        "height": 110.0,
+        "visible": true,
+        "text": "{{seen}}\n{{scene:age}}",
+        "font_size": 28.0,
+        "bold": true,
+        "color": "#ffffff",
+        "background": "#ff5c8add",
+        "border_color": "#00000000",
+        "border_width": 0.0,
+        "corner_radius": 18.0,
+        "opacity": 1.0,
+        "align": "center",
+        "idle": "none",
+        "enter": "slide-up"
+      }
+    },
+    {
+      "id": "now-showing",
+      "name": "Now showing",
+      "kind": "text",
+      "props": {
+        "x": 47.0,
+        "y": 665.0,
+        "width": 900.0,
+        "height": 100.0,
+        "visible": false,
+        "text": "Now showing: {{showing-item}}",
+        "font_size": 52.0,
+        "bold": true,
+        "color": "#ffffff",
+        "background": "#ff5c8add",
+        "border_color": "#00000000",
+        "border_width": 0.0,
+        "corner_radius": 18.0,
+        "opacity": 1.0,
+        "align": "center",
+        "idle": "none",
+        "enter": "slide-up"
+      }
+    },
+    {
+      "id": "on-air",
+      "name": "On air",
+      "kind": "text",
+      "props": {
+        "x": 1568.0,
+        "y": 40.0,
+        "width": 196.0,
+        "height": 44.0,
+        "visible": true,
+        "text": "{{on-air}}",
+        "font_size": 15.0,
+        "bold": true,
+        "color": "#f2f0edff",
+        "background": "#1c1c1eee",
+        "border_color": "#00000000",
+        "border_width": 0.0,
+        "corner_radius": 22.0,
+        "opacity": 1.0,
+        "align": "center",
+        "idle": "none",
+        "enter": "fade"
+      }
+    },
+    {
+      "id": "on-air-time",
+      "name": "Time on air",
+      "kind": "text",
+      "props": {
+        "x": 1772.0,
+        "y": 40.0,
+        "width": 108.0,
+        "height": 44.0,
+        "visible": true,
+        "text": "{{on-air-time}}",
+        "font_size": 15.0,
+        "bold": true,
+        "color": "#f2f0edff",
+        "background": "#1c1c1eee",
+        "border_color": "#00000000",
+        "border_width": 0.0,
+        "corner_radius": 22.0,
+        "opacity": 1.0,
+        "align": "center",
+        "idle": "none",
+        "enter": "fade"
+      }
+    },
+    {
+      "id": "pet-alert",
+      "name": "Pet alert",
+      "kind": "text",
+      "props": {
+        "x": 1380.0,
+        "y": 60.0,
+        "width": 480.0,
+        "height": 110.0,
+        "visible": false,
+        "text": "{{pet-in-view}} on stream!",
+        "font_size": 52.0,
+        "bold": true,
+        "color": "#1a1a1aff",
+        "background": "#ffc233ee",
+        "border_color": "#00000000",
+        "border_width": 0.0,
+        "corner_radius": 55.0,
+        "opacity": 1.0,
+        "align": "center",
+        "idle": "float",
+        "enter": "pop"
+      }
+    },
+    {
+      "id": "poker-card",
+      "name": "Poker card",
+      "kind": "text",
+      "props": {
+        "x": 1602.0,
+        "y": 617.0,
+        "width": 300.0,
+        "height": 420.0,
+        "visible": false,
+        "text": "",
+        "font_size": 130.0,
+        "bold": true,
+        "color": "#111827ff",
+        "background": "#f8fafcff",
+        "border_color": "#3b82f6ff",
+        "border_width": 8.0,
+        "corner_radius": 28.0,
+        "opacity": 1.0,
+        "align": "center",
+        "idle": "none",
+        "enter": "pop"
+      }
+    },
+    {
+      "id": "meeting-card",
+      "name": "Meeting card",
+      "kind": "text",
+      "props": {
+        "x": 535.0,
+        "y": 188.0,
+        "width": 1160.0,
+        "height": 180.0,
+        "visible": false,
+        "text": "",
+        "font_size": 72.0,
+        "bold": true,
+        "color": "#ffffffff",
+        "background": "#1e293bff",
+        "border_color": "#00000000",
+        "border_width": 0.0,
+        "corner_radius": 36.0,
+        "opacity": 1.0,
+        "align": "center",
+        "idle": "none",
+        "enter": "pop"
+      }
+    },
+    {
+      "id": "classroom-card",
+      "name": "Classroom card",
+      "kind": "text",
+      "props": {
+        "x": 13.0,
+        "y": 210.0,
+        "width": 760.0,
+        "height": 220.0,
+        "visible": false,
+        "text": "",
+        "font_size": 64.0,
+        "bold": true,
+        "color": "#ffffffff",
+        "background": "#1e293bff",
+        "border_color": "#00000000",
+        "border_width": 0.0,
+        "corner_radius": 32.0,
+        "opacity": 1.0,
+        "align": "center",
+        "idle": "none",
+        "enter": "slide-up"
+      }
+    },
+    {
+      "id": "status-card",
+      "name": "Status banner",
+      "kind": "text",
+      "props": {
+        "x": 360.0,
+        "y": 40.0,
+        "width": 1200.0,
+        "height": 130.0,
+        "visible": false,
+        "text": "",
+        "font_size": 60.0,
+        "bold": true,
+        "color": "#ffffffff",
+        "background": "#1e293bff",
+        "border_color": "#00000000",
+        "border_width": 0.0,
+        "corner_radius": 65.0,
+        "opacity": 1.0,
+        "align": "center",
+        "idle": "none",
+        "enter": "fade"
+      }
+    },
+    {
+      "id": "subtitles-spoken",
+      "name": "Subtitles",
+      "kind": "text",
+      "props": {
+        "x": 412.0,
+        "y": 849.0,
+        "width": 1160.0,
+        "height": 100.0,
+        "visible": true,
+        "text": "{{subtitles}}",
+        "font_size": 40.0,
+        "bold": true,
+        "color": "#ffffffff",
+        "background": "#111827ff",
+        "border_color": "#00000000",
+        "border_width": 0.0,
+        "corner_radius": 16.0,
+        "opacity": 1.0,
+        "align": "center",
+        "idle": "none",
+        "enter": "none"
+      }
+    },
+    {
+      "id": "subtitles-translated",
+      "name": "Translated subtitles",
+      "kind": "text",
+      "props": {
+        "x": 396.0,
+        "y": 962.0,
+        "width": 1160.0,
+        "height": 100.0,
+        "visible": true,
+        "text": "{{subtitles:1}}",
+        "font_size": 40.0,
+        "bold": true,
+        "color": "#fde047ff",
+        "background": "#111827ff",
+        "border_color": "#00000000",
+        "border_width": 0.0,
+        "corner_radius": 16.0,
+        "opacity": 1.0,
+        "align": "center",
+        "idle": "none",
+        "enter": "none"
+      }
+    }
+  ],
+  "conditions": [
+    {
+      "id": "showing-item",
+      "name": "Showing something",
+      "prompt": "The person is deliberately holding an object up toward the camera to show it to viewers.",
+      "detail": "the object's name in one to four words, such as \"coffee mug\"",
+      "enabled": true,
+      "min_confidence": 0.6,
+      "confirm": 1,
+      "release": 2
+    },
+    {
+      "id": "pet-in-view",
+      "name": "Pet on camera",
+      "prompt": "A cat, dog, or other pet animal is clearly visible in the image.",
+      "detail": "the kind of animal as one capitalized word, such as \"Cat\"",
+      "enabled": true,
+      "min_confidence": 0.6,
+      "confirm": 1,
+      "release": 2
+    }
+  ],
+  "rules": [
+    {
+      "id": "away-show-brb",
+      "name": "Show BRB when I leave",
+      "enabled": true,
+      "when": "away",
+      "actions": [
+        {
+          "type": "set_props",
+          "element": "brb",
+          "props": {
+            "visible": true
+          }
+        }
+      ]
+    },
+    {
+      "id": "present-hide-brb",
+      "name": "Hide BRB when I return",
+      "enabled": true,
+      "when": "present",
+      "actions": [
+        {
+          "type": "set_props",
+          "element": "brb",
+          "props": {
+            "visible": false
+          }
+        },
+        {
+          "type": "effect",
+          "element": "cam-frame",
+          "effect": "flash"
+        }
+      ]
+    },
+    {
+      "id": "item-show",
+      "name": "Name what I hold up",
+      "enabled": true,
+      "when": {
+        "condition": "showing-item",
+        "state": "on"
+      },
+      "actions": [
+        {
+          "type": "set_props",
+          "element": "now-showing",
+          "props": {
+            "visible": true
+          }
+        }
+      ]
+    },
+    {
+      "id": "item-hide",
+      "name": "Hide it when I put it down",
+      "enabled": true,
+      "when": {
+        "condition": "showing-item",
+        "state": "off"
+      },
+      "actions": [
+        {
+          "type": "set_props",
+          "element": "now-showing",
+          "props": {
+            "visible": false
+          }
+        }
+      ]
+    },
+    {
+      "id": "pet-show",
+      "name": "Announce my pet",
+      "enabled": true,
+      "when": {
+        "condition": "pet-in-view",
+        "state": "on"
+      },
+      "actions": [
+        {
+          "type": "set_props",
+          "element": "pet-alert",
+          "props": {
+            "visible": true
+          }
+        },
+        {
+          "type": "effect",
+          "element": "cam-frame",
+          "effect": "bounce"
+        }
+      ]
+    },
+    {
+      "id": "pet-hide",
+      "name": "Hide the pet alert",
+      "enabled": true,
+      "when": {
+        "condition": "pet-in-view",
+        "state": "off"
+      },
+      "actions": [
+        {
+          "type": "set_props",
+          "element": "pet-alert",
+          "props": {
+            "visible": false
+          }
+        }
+      ]
+    }
+  ],
+  "decks": [
+    {
+      "id": "poker",
+      "name": "Planning poker",
+      "element": "poker-card",
+      "cards": [
+        {
+          "id": "p0",
+          "name": "0",
+          "props": {
+            "text": "0"
+          },
+          "signal": {
+            "fingers": 0
+          }
+        },
+        {
+          "id": "p1",
+          "name": "1",
+          "props": {
+            "text": "1"
+          },
+          "signal": {
+            "fingers": 1
+          }
+        },
+        {
+          "id": "p2",
+          "name": "2",
+          "props": {
+            "text": "2"
+          },
+          "signal": {
+            "fingers": 2
+          }
+        },
+        {
+          "id": "p3",
+          "name": "3",
+          "props": {
+            "text": "3"
+          },
+          "signal": {
+            "fingers": 3
+          }
+        },
+        {
+          "id": "p5",
+          "name": "5",
+          "props": {
+            "text": "5"
+          },
+          "signal": {
+            "fingers": 5
+          }
+        },
+        {
+          "id": "p8",
+          "name": "8",
+          "props": {
+            "text": "8"
+          },
+          "signal": {
+            "fingers": 8
+          }
+        },
+        {
+          "id": "p13",
+          "name": "13",
+          "props": {
+            "text": "13"
+          }
+        },
+        {
+          "id": "p21",
+          "name": "21",
+          "props": {
+            "text": "21"
+          }
+        },
+        {
+          "id": "unsure",
+          "name": "?",
+          "props": {
+            "text": "?"
+          },
+          "speech": "I'm not sure"
+        },
+        {
+          "id": "break",
+          "name": "☕",
+          "props": {
+            "text": "☕"
+          },
+          "speech": "Coffee break"
+        }
+      ],
+      "auto_hide_ms": 0,
+      "camera": true,
+      "voice": true,
+      "speak": true
+    },
+    {
+      "id": "meeting",
+      "name": "Meeting signals",
+      "element": "meeting-card",
+      "cards": [
+        {
+          "id": "wrap-up",
+          "name": "Wrap it up",
+          "props": {
+            "text": "⏱️ Wrap it up",
+            "color": "#111827ff",
+            "background": "#f59e0bff"
+          }
+        },
+        {
+          "id": "off-track",
+          "name": "We're off track",
+          "props": {
+            "text": "🧭 We're off track",
+            "color": "#ffffffff",
+            "background": "#c2410cff"
+          },
+          "phrases": [
+            "we're getting off track"
+          ]
+        },
+        {
+          "id": "question",
+          "name": "I have a question",
+          "props": {
+            "text": "✋ I have a question",
+            "color": "#ffffffff",
+            "background": "#2563ebff"
+          },
+          "phrases": [
+            "I have a question"
+          ]
+        },
+        {
+          "id": "agree",
+          "name": "Agree",
+          "props": {
+            "text": "👍 Agree",
+            "color": "#ffffffff",
+            "background": "#15803dff"
+          },
+          "signal": {
+            "sign": "thumbs_up"
+          }
+        },
+        {
+          "id": "disagree",
+          "name": "Disagree",
+          "props": {
+            "text": "👎 Disagree",
+            "color": "#ffffffff",
+            "background": "#dc2626ff"
+          },
+          "signal": {
+            "sign": "thumbs_down"
+          }
+        },
+        {
+          "id": "cant-hear",
+          "name": "Can't hear you",
+          "props": {
+            "text": "🔇 Can't hear you",
+            "color": "#ffffffff",
+            "background": "#7c3aedff"
+          },
+          "phrases": [
+            "I can't hear you"
+          ]
+        },
+        {
+          "id": "offline",
+          "name": "Let's take this offline",
+          "props": {
+            "text": "🗂️ Let's take this offline",
+            "color": "#ffffffff",
+            "background": "#0f766eff"
+          },
+          "phrases": [
+            "let's take this offline"
+          ]
+        },
+        {
+          "id": "next-topic",
+          "name": "Next topic",
+          "props": {
+            "text": "⏭️ Next topic",
+            "color": "#ffffffff",
+            "background": "#db2777ff"
+          },
+          "phrases": [
+            "next topic"
+          ]
+        }
+      ],
+      "auto_hide_ms": 15000,
+      "camera": true,
+      "voice": true,
+      "speak": true
+    },
+    {
+      "id": "classroom",
+      "name": "Classroom",
+      "element": "classroom-card",
+      "cards": [
+        {
+          "id": "hand",
+          "name": "✋ Hand raised",
+          "props": {
+            "text": "✋ Hand raised",
+            "color": "#111827ff",
+            "background": "#facc15ff"
+          },
+          "signal": "hand_raised"
+        },
+        {
+          "id": "question",
+          "name": "❓ Question",
+          "props": {
+            "text": "❓ Question",
+            "color": "#ffffffff",
+            "background": "#2563ebff"
+          },
+          "phrases": [
+            "I have a question"
+          ]
+        },
+        {
+          "id": "repeat",
+          "name": "🔁 Please repeat",
+          "props": {
+            "text": "🔁 Please repeat",
+            "color": "#ffffffff",
+            "background": "#7c3aedff"
+          }
+        },
+        {
+          "id": "slower",
+          "name": "🐢 Slower, please",
+          "props": {
+            "text": "🐢 Slower, please",
+            "color": "#ffffffff",
+            "background": "#0f766eff"
+          }
+        },
+        {
+          "id": "got-it",
+          "name": "✅ Got it",
+          "props": {
+            "text": "✅ Got it",
+            "color": "#ffffffff",
+            "background": "#15803dff"
+          },
+          "signal": {
+            "sign": "thumbs_up"
+          }
+        },
+        {
+          "id": "answer-a",
+          "name": "A",
+          "props": {
+            "text": "A",
+            "font_size": 150.0,
+            "color": "#ffffffff",
+            "background": "#dc2626ff"
+          }
+        },
+        {
+          "id": "answer-b",
+          "name": "B",
+          "props": {
+            "text": "B",
+            "font_size": 150.0,
+            "color": "#ffffffff",
+            "background": "#1d4ed8ff"
+          }
+        },
+        {
+          "id": "answer-c",
+          "name": "C",
+          "props": {
+            "text": "C",
+            "font_size": 150.0,
+            "color": "#ffffffff",
+            "background": "#b45309ff"
+          }
+        },
+        {
+          "id": "answer-d",
+          "name": "D",
+          "props": {
+            "text": "D",
+            "font_size": 150.0,
+            "color": "#ffffffff",
+            "background": "#166534ff"
+          }
+        }
+      ],
+      "auto_hide_ms": 30000,
+      "camera": false,
+      "voice": false,
+      "speak": false
+    },
+    {
+      "id": "status",
+      "name": "Status",
+      "element": "status-card",
+      "cards": [
+        {
+          "id": "muted",
+          "name": "🔇 I'm on mute",
+          "props": {
+            "text": "🔇 I'm on mute",
+            "color": "#ffffffff",
+            "background": "#dc2626ff"
+          }
+        },
+        {
+          "id": "brb",
+          "name": "☕ Back in 5",
+          "props": {
+            "text": "☕ Back in 5",
+            "color": "#ffffffff",
+            "background": "#b45309ff"
+          },
+          "phrases": [
+            "I'll be right back"
+          ]
+        },
+        {
+          "id": "lunch",
+          "name": "🍽️ At lunch",
+          "props": {
+            "text": "🍽️ At lunch",
+            "color": "#ffffffff",
+            "background": "#c2410cff"
+          }
+        },
+        {
+          "id": "focus",
+          "name": "🎧 Focus time",
+          "props": {
+            "text": "🎧 Focus time",
+            "color": "#ffffffff",
+            "background": "#4f46e5ff"
+          }
+        },
+        {
+          "id": "presenting",
+          "name": "🖥️ Presenting",
+          "props": {
+            "text": "🖥️ Presenting",
+            "color": "#ffffffff",
+            "background": "#2563ebff"
+          }
+        },
+        {
+          "id": "on-call",
+          "name": "📞 On another call",
+          "props": {
+            "text": "📞 On another call",
+            "color": "#ffffffff",
+            "background": "#7c3aedff"
+          }
+        }
+      ],
+      "auto_hide_ms": 0,
+      "camera": false,
+      "voice": false,
+      "speak": false
+    }
+  ],
+  "reactions": {
+    "enabled": true,
+    "cooldown_ms": 3000
+  },
+  "detection": {
+    "min_confidence": 0.7,
+    "present_after_ms": 500,
+    "away_after_ms": 3000,
+    "stale_after_ms": 2000,
+    "sample_fps": 5.0
+  },
+  "ai": {
+    "enabled": true,
+    "min_interval_ms": 2500,
+    "refresh_ms": 20000,
+    "change_threshold": 0.06,
+    "max_calls_per_minute": 12,
+    "max_cost_per_hour": 2.0
+  },
+  "automation_enabled": true
+}

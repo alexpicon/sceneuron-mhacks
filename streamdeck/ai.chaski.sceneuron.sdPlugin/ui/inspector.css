@@ -1,0 +1,111 @@
+/* Copyright (c) 2026 Alexander Picon, Chaski AI (https://chaski.ai). All rights reserved. */
+/* Proprietary software; see LICENSE. */
+
+/* Sized and colored like Stream Deck's own inspector panels. */
+:root {
+  color-scheme: dark;
+  --text: #d8d8d8;
+  --muted: #9a9a9a;
+  --field: #3d3d3d;
+  --field-hover: #4a4a4a;
+  --focus: #5f8ef6;
+}
+
+body {
+  margin: 0;
+  padding: 6px 14px 16px 6px;
+  background: #2d2d2d;
+  color: var(--text);
+  font: 13px/1.4 -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+.item {
+  display: grid;
+  grid-template-columns: 96px 1fr;
+  align-items: center;
+  gap: 10px;
+  margin: 6px 0;
+}
+
+.item > label {
+  color: var(--muted);
+  text-align: right;
+}
+
+select,
+input,
+button {
+  min-height: 26px;
+  box-sizing: border-box;
+  padding: 2px 6px;
+  border: 1px solid var(--field);
+  border-radius: 3px;
+  background: var(--field);
+  color: var(--text);
+  font: inherit;
+}
+
+button {
+  justify-self: start;
+  padding: 2px 14px;
+  cursor: pointer;
+}
+
+button:hover:not(:disabled) {
+  background: var(--field-hover);
+}
+
+button:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+
+select:focus,
+input:focus,
+button:focus-visible,
+summary:focus-visible {
+  outline: 1px solid var(--focus);
+  outline-offset: 1px;
+}
+
+h2 {
+  margin: 14px 0 4px;
+  padding-top: 10px;
+  border-top: 1px solid var(--field);
+  color: var(--muted);
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.note,
+summary {
+  margin: 6px 0 6px 106px;
+  color: var(--muted);
+}
+
+summary {
+  cursor: pointer;
+  color: var(--text);
+}
+
+#status[data-state="connected"] {
+  color: #7bd88f;
+}
+
+#status[data-state="refused"],
+#pair-result[data-ok="false"] {
+  color: #ffb86c;
+}
+
+#pair-result[data-ok="true"] {
+  color: #7bd88f;
+}
+
+#pair-result:empty {
+  display: none;
+}

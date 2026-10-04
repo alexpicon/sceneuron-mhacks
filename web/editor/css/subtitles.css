@@ -1,0 +1,57 @@
+/* Copyright (c) 2026 Alexander Picon, Chaski AI (https://chaski.ai). All rights reserved. */
+/* Proprietary software; see LICENSE. */
+
+/* Sceneuron editor: the AI tab's Subtitles section: the preview of the lines, the words still being said, and the
+   target languages, each with the box that keeps a script of its own. */
+
+.subtitle-preview {
+  margin: 0 0 12px;
+  padding: 10px 12px;
+  border-radius: 6px;
+  background: #111827;
+  color: #ffffff;
+}
+
+.subtitle-preview .hint {
+  margin: 0;
+  color: #cbd5e1;
+}
+
+.subtitle-lines {
+  margin: 0;
+  font-weight: 600;
+  line-height: 1.35;
+}
+
+.subtitle-lines:empty,
+.subtitle-live:empty {
+  display: none;
+}
+
+/* Words still being said may change, so they are drawn apart from the final lines. */
+.subtitle-live {
+  margin: 4px 0 0;
+  color: #cbd5e1;
+  font-style: italic;
+}
+
+#subtitles-translations .subtitle-lines {
+  margin-top: 6px;
+  color: #fde047;
+}
+
+.subtitle-language {
+  color: #e2e8f0;
+  font-weight: 400;
+}
+
+fieldset.targets {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+/* Under a picked language with a script of its own, the box that keeps it; other languages have none. */
+.target-script[hidden] {
+  display: none;
+}

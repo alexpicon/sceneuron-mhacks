@@ -1,0 +1,35 @@
+{
+  "enabled": false,
+  "consent": false,
+  "provider": "gemini",
+  "vision_effort": "low",
+  "planner_effort": "medium",
+  "api_key": "",
+  "image_width": 768,
+  "input_price_per_mtok": null,
+  "output_price_per_mtok": null,
+  "jev_api_key": "",
+  "elevenlabs_api_key": "",
+  "voice": {
+    "enabled": false,
+    "consent": false,
+    "mode": "always_on",
+    "wake_word": "Sceneuron",
+    "language": "",
+    "speak": false,
+    "voice_id": "JBFqnCBsd6RMkjVDRZzb",
+    "tts_model": "eleven_flash_v2_5",
+    "stt_model": "scribe_v2_realtime"
+  },
+  "subtitles": {
+    "enabled": false,
+    "consent": false,
+    "language": "",
+    "targets": ["ja"],
+    "lines": 2,
+    "clear_after_ms": 4000,
+    "hide_commands": true,
+    "stream_captions": true,
+    "stream_language": ""
+  }
+}

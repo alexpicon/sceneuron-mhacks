@@ -1,0 +1,340 @@
+<!doctype html>
+<!-- Copyright (c) 2026 Alexander Picon, Chaski AI (https://chaski.ai). All rights reserved. -->
+<!-- Proprietary software; see LICENSE. -->
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="dark">
+    <title>Sceneuron editor</title>
+    <link rel="icon" href="data:,">
+    <link rel="stylesheet" href="/assets/editor/css/base.css">
+    <link rel="stylesheet" href="/assets/editor/css/layout.css">
+    <link rel="stylesheet" href="/assets/editor/css/workspace.css">
+    <link rel="stylesheet" href="/assets/editor/css/side.css">
+    <link rel="stylesheet" href="/assets/editor/css/ai.css">
+    <link rel="stylesheet" href="/assets/editor/css/voice.css">
+    <link rel="stylesheet" href="/assets/editor/css/subtitles.css">
+    <link rel="stylesheet" href="/assets/editor/css/conditions.css">
+    <link rel="stylesheet" href="/assets/editor/css/cards.css">
+    <link rel="stylesheet" href="/assets/editor/css/assistant.css">
+    <link rel="stylesheet" href="/assets/editor/css/setup.css">
+    <link rel="stylesheet" href="/assets/editor/css/theme.css">
+    <link rel="stylesheet" href="/assets/editor/css/notifications.css">
+    <link rel="stylesheet" href="/assets/script-fonts.css">
+    <!-- Classic scripts that share window.SceneuronEditor, in dependency order; main.js starts the editor. -->
+    <script src="/assets/link.js" defer></script>
+    <script src="/assets/render-style.js" defer></script>
+    <script src="/assets/themes/graphite.js" defer></script>
+    <script src="/assets/themes/hacker.js" defer></script>
+    <script src="/assets/themes/eighties.js" defer></script>
+    <script src="/assets/themes/windows-95.js" defer></script>
+    <script src="/assets/themes/classic-mac.js" defer></script>
+    <script src="/assets/themes/vaporwave.js" defer></script>
+    <script src="/assets/render-themes.js" defer></script>
+    <script src="/assets/render-fit.js" defer></script>
+    <script src="/assets/icons.js" defer></script>
+    <script src="/assets/render-icons.js" defer></script>
+    <script src="/assets/render-results.js" defer></script>
+    <script src="/assets/render-cards.js" defer></script>
+    <script src="/assets/render-clock.js" defer></script>
+    <script src="/assets/render-subtitles.js" defer></script>
+    <script src="/assets/render.js" defer></script>
+    <script src="/assets/reaction-presets.js" defer></script>
+    <script src="/assets/flood-banner.js" defer></script>
+    <script src="/assets/flood-burst.js" defer></script>
+    <script src="/assets/flood.js" defer></script>
+    <script src="/assets/editor/constants.js" defer></script>
+    <script src="/assets/editor/values.js" defer></script>
+    <script src="/assets/editor/project.js" defer></script>
+    <script src="/assets/editor/triggers.js" defer></script>
+    <script src="/assets/editor/placeholders.js" defer></script>
+    <script src="/assets/editor/condition-edits.js" defer></script>
+    <script src="/assets/editor/deck-edits.js" defer></script>
+    <script src="/assets/editor/cards-text.js" defer></script>
+    <script src="/assets/editor/signals-context.js" defer></script>
+    <script src="/assets/editor/signals-text.js" defer></script>
+    <script src="/assets/editor/room-text.js" defer></script>
+    <script src="/assets/editor/plan-text.js" defer></script>
+    <script src="/assets/editor/ai-text.js" defer></script>
+    <script src="/assets/editor/consent-text.js" defer></script>
+    <script src="/assets/editor/voice-text.js" defer></script>
+    <script src="/assets/editor/voice-guide-text.js" defer></script>
+    <script src="/assets/editor/languages.js" defer></script>
+    <script src="/assets/editor/language-text.js" defer></script>
+    <script src="/assets/editor/subtitles-text.js" defer></script>
+    <script src="/assets/editor/camera-text.js" defer></script>
+    <script src="/assets/editor/mic-text.js" defer></script>
+    <script src="/assets/editor/stream-deck-text.js" defer></script>
+    <script src="/assets/editor/reactions-text.js" defer></script>
+    <script src="/assets/editor/settings-file.js" defer></script>
+    <script src="/assets/editor/snapshot.js" defer></script>
+    <script src="/assets/editor/drag.js" defer></script>
+    <script src="/assets/editor/api.js" defer></script>
+    <script src="/assets/editor/dom.js" defer></script>
+    <script src="/assets/editor/app.js" defer></script>
+    <script src="/assets/editor/panels/notifications.js" defer></script>
+    <script src="/assets/editor/panels/status.js" defer></script>
+    <script src="/assets/editor/panels/ai-status.js" defer></script>
+    <script src="/assets/editor/panels/events.js" defer></script>
+    <script src="/assets/editor/panels/elements.js" defer></script>
+    <script src="/assets/editor/panels/preview.js" defer></script>
+    <script src="/assets/editor/panels/property-fields.js" defer></script>
+    <script src="/assets/editor/panels/properties.js" defer></script>
+    <script src="/assets/editor/panels/placeholder-chips.js" defer></script>
+    <script src="/assets/editor/panels/live.js" defer></script>
+    <script src="/assets/editor/panels/rule-cards.js" defer></script>
+    <script src="/assets/editor/panels/rules.js" defer></script>
+    <script src="/assets/editor/panels/ai-fields.js" defer></script>
+    <script src="/assets/editor/panels/condition-cards.js" defer></script>
+    <script src="/assets/editor/panels/conditions.js" defer></script>
+    <script src="/assets/editor/panels/settings.js" defer></script>
+    <script src="/assets/editor/panels/settings-transfer.js" defer></script>
+    <script src="/assets/editor/panels/theme.js" defer></script>
+    <script src="/assets/editor/panels/reactions.js" defer></script>
+    <script src="/assets/editor/panels/ai-settings.js" defer></script>
+    <script src="/assets/editor/panels/voice-fields.js" defer></script>
+    <script src="/assets/editor/panels/voice.js" defer></script>
+    <script src="/assets/editor/panels/voice-guide.js" defer></script>
+    <script src="/assets/editor/panels/subtitles-fields.js" defer></script>
+    <script src="/assets/editor/panels/subtitles.js" defer></script>
+    <script src="/assets/editor/panels/plan-view.js" defer></script>
+    <script src="/assets/editor/panels/plan-session.js" defer></script>
+    <script src="/assets/editor/panels/assistant.js" defer></script>
+    <script src="/assets/editor/panels/setup-wizard.js" defer></script>
+    <script src="/assets/editor/panels/camera-fields.js" defer></script>
+    <script src="/assets/editor/panels/camera.js" defer></script>
+    <script src="/assets/editor/panels/camera-preview.js" defer></script>
+    <script src="/assets/editor/panels/microphones.js" defer></script>
+    <script src="/assets/editor/panels/deck-voice.js" defer></script>
+    <script src="/assets/editor/panels/deck-cards.js" defer></script>
+    <script src="/assets/editor/panels/cards.js" defer></script>
+    <script src="/assets/editor/panels/packs.js" defer></script>
+    <script src="/assets/editor/panels/room-markup.js" defer></script>
+    <script src="/assets/editor/panels/room.js" defer></script>
+    <script src="/assets/editor/panels/stream-deck.js" defer></script>
+    <script src="/assets/editor/panels/tabs.js" defer></script>
+    <script src="/assets/editor/sync.js" defer></script>
+    <script src="/assets/editor/main.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#preview">Skip to preview</a>
+    <header class="topbar">
+      <h1 class="brand">Sceneuron</h1>
+      <div class="status" role="group" aria-label="Live status">
+        <span id="connection-chip" class="chip" data-state="connecting">Connecting</span>
+        <span id="presence-chip" class="chip" data-state="unknown">
+        <span class="visually-hidden">Presence: </span><span id="presence-text">Unknown</span>
+      </span>
+        <span id="vision-chip" class="chip" data-state="idle">Camera idle</span>
+        <span id="ai-chip" class="chip" data-state="off" hidden>AI off</span>
+        <span id="automation-chip" class="chip" data-state="on">Automation on</span>
+        <button id="automation-toggle" type="button">Pause automation</button>
+      </div>
+      <div class="save-area">
+        <span id="dirty-indicator" class="dirty-indicator" data-dirty="false"
+          aria-live="polite">All changes saved</span>
+        <button id="discard-button" type="button" disabled>Discard changes</button>
+        <button id="save-button" type="button" class="primary" aria-keyshortcuts="Control+S Meta+S">Save</button>
+      </div>
+    </header>
+    <div id="banner" class="banner" role="alert" hidden>
+      <p id="banner-text"></p>
+      <button id="banner-retry" type="button" hidden>Retry</button>
+    </div>
+    <main class="layout">
+      <section class="panel" aria-labelledby="elements-heading">
+        <h2 id="elements-heading">Elements</h2>
+        <p id="element-list-help" class="visually-hidden">Up and down arrow keys move between elements.</p>
+        <ul id="element-list" class="element-list" aria-describedby="element-list-help"></ul>
+        <div class="button-grid" role="group" aria-label="Add element">
+          <button type="button" data-add-kind="text">Add text</button>
+          <button type="button" data-add-kind="box">Add box</button>
+          <button type="button" data-add-kind="frame">Add frame</button>
+          <button id="add-live-description" type="button" aria-describedby="live-description-help">Add live
+          description</button>
+        </div>
+        <p id="live-description-help" class="hint">A live description says what the camera sees, made on this
+        computer from every analyzed frame: free, and nothing is sent. While scene understanding is on, the AI's latest
+        caption shows below it, and each caption costs a look.</p>
+        <button id="delete-element" type="button" class="danger wide">Delete selected</button>
+      </section>
+
+      <section class="panel center" aria-label="Assistant, preview, and live control">
+        <section id="assistant" class="assistant" aria-labelledby="assistant-heading" hidden></section>
+
+        <section aria-labelledby="preview-heading">
+          <h2 id="preview-heading">Preview</h2>
+          <p id="preview-help" class="hint">
+          Drag an element to move it. When the preview has focus, arrow keys move the selected element
+          (Shift: 10 px). Hidden elements appear faded.
+        </p>
+          <div id="preview" class="preview" tabindex="0" role="group" aria-label="Overlay preview"
+            aria-describedby="preview-help">
+            <div id="preview-root"></div>
+          </div>
+        </section>
+
+        <section class="live" aria-labelledby="live-heading">
+          <h2 id="live-heading">Live controls</h2>
+          <p id="live-target" class="hint">Select an element to control it live.</p>
+          <div id="live-controls" class="live-grid">
+            <div class="button-row" role="group" aria-label="Hold visibility">
+              <button type="button" data-hold-visible="true">Show (hold)</button>
+              <button type="button" data-hold-visible="false">Hide (hold)</button>
+            </div>
+            <div class="inline-field">
+              <label for="hold-text">Text</label>
+              <input id="hold-text" type="text" maxlength="1000" autocomplete="off">
+              <button id="hold-text-button" type="button">Hold text</button>
+            </div>
+            <div class="button-row" role="group" aria-label="Play effect">
+              <button type="button" data-effect="shake">Shake</button>
+              <button type="button" data-effect="pop">Pop</button>
+              <button type="button" data-effect="flash">Flash</button>
+              <button type="button" data-effect="bounce">Bounce</button>
+            </div>
+            <div class="button-row">
+              <span id="live-held" class="hint">Nothing held</span>
+              <button id="release-element" type="button">Release</button>
+            </div>
+          </div>
+          <div class="button-row spaced">
+            <button id="release-all" type="button">Release all overrides</button>
+            <span class="divider" aria-hidden="true"></span>
+            <span id="test-label" class="hint">Test rules:</span>
+            <button type="button" data-simulate="away" aria-describedby="test-label">Simulate away</button>
+            <button type="button" data-simulate="present" aria-describedby="test-label">Simulate present</button>
+          </div>
+        </section>
+
+        <section aria-labelledby="events-heading">
+          <h2 id="events-heading">Recent events</h2>
+          <ol id="event-log" class="event-log"></ol>
+          <p id="event-empty" class="hint">No events yet.</p>
+        </section>
+      </section>
+
+      <section class="panel side" aria-label="Element, rule, card, AI, camera, and microphone settings">
+        <div class="tabs" role="tablist" aria-label="Editor sections">
+          <button type="button" role="tab" id="tab-properties" aria-controls="panel-properties"
+            aria-selected="true">Properties</button>
+          <button type="button" role="tab" id="tab-rules" aria-controls="panel-rules" aria-selected="false"
+            tabindex="-1">Rules</button>
+          <button type="button" role="tab" id="tab-cards" aria-controls="panel-cards" aria-selected="false"
+            tabindex="-1">Cards</button>
+          <button type="button" role="tab" id="tab-ai" aria-controls="panel-ai" aria-selected="false"
+            tabindex="-1">AI</button>
+          <button type="button" role="tab" id="tab-settings" aria-controls="panel-settings" aria-selected="false"
+            tabindex="-1">Settings</button>
+          <button type="button" role="tab" id="tab-camera" aria-controls="panel-camera" aria-selected="false"
+            tabindex="-1">Camera &amp; mic</button>
+        </div>
+
+        <div id="panel-properties" role="tabpanel" aria-labelledby="tab-properties">
+          <p id="props-empty" class="hint">Select an element to edit its properties.</p>
+          <form id="props-form" class="form" novalidate hidden></form>
+        </div>
+
+        <div id="panel-rules" role="tabpanel" aria-labelledby="tab-rules" hidden>
+          <p class="hint">Rules run when presence changes or an AI condition turns on or off, while automation is on.
+          Manual holds always win.</p>
+          <div id="rules-list" class="rules"></div>
+          <p id="rules-empty" class="hint" hidden>No rules yet.</p>
+          <button id="add-rule" type="button">Add rule</button>
+        </div>
+
+        <div id="panel-cards" role="tabpanel" aria-labelledby="tab-cards" hidden></div>
+
+        <div id="panel-ai" role="tabpanel" aria-labelledby="tab-ai" hidden></div>
+
+        <div id="panel-settings" role="tabpanel" aria-labelledby="tab-settings" hidden>
+          <form id="theme-form" class="form" novalidate></form>
+          <form id="settings-form" class="form" novalidate>
+            <fieldset>
+              <legend>Overlay canvas</legend>
+              <div class="grid-2">
+                <div class="field">
+                  <label for="canvas-width">Width (px)</label>
+                  <input id="canvas-width" type="number" min="16" max="8192" step="1" data-canvas="width"
+                    data-integer="true">
+                </div>
+                <div class="field">
+                  <label for="canvas-height">Height (px)</label>
+                  <input id="canvas-height" type="number" min="16" max="8192" step="1" data-canvas="height"
+                    data-integer="true">
+                </div>
+              </div>
+            </fieldset>
+            <fieldset>
+              <legend>Presence detection</legend>
+              <div class="field">
+                <label for="det-min_confidence">Minimum face confidence (0.05 to 0.99)</label>
+                <input id="det-min_confidence" type="number" min="0.05" max="0.99" step="0.01"
+                  data-detection="min_confidence">
+              </div>
+              <div class="field">
+                <label for="det-present_after_ms">Present after a face is seen for (ms)</label>
+                <input id="det-present_after_ms" type="number" min="0" max="600000" step="100"
+                  data-detection="present_after_ms" data-integer="true">
+              </div>
+              <div class="field">
+                <label for="det-away_after_ms">Away after no face for (ms)</label>
+                <input id="det-away_after_ms" type="number" min="0" max="600000" step="100"
+                  data-detection="away_after_ms" data-integer="true">
+              </div>
+              <div class="field">
+                <label for="det-stale_after_ms">Unknown after no camera frames for (ms)</label>
+                <input id="det-stale_after_ms" type="number" min="0" max="600000" step="100"
+                  data-detection="stale_after_ms" data-integer="true">
+              </div>
+              <div class="field">
+                <label for="det-sample_fps">Frames analyzed per second (0.5 to 30)</label>
+                <input id="det-sample_fps" type="number" min="0.5" max="30" step="0.5" data-detection="sample_fps">
+              </div>
+            </fieldset>
+            <fieldset aria-describedby="reactions-help">
+              <legend>Fun reactions</legend>
+              <div class="check">
+                <input id="reactions-enabled" type="checkbox" data-reactions="enabled">
+                <label for="reactions-enabled">Let the camera and trigger phrases play reactions: a facepalm plays 📧
+                "This meeting could have been an email", a tongue sticking out floods the screen with 😜, and saying
+                "mind blown" plays 🤯</label>
+              </div>
+              <p id="reactions-help" class="hint">They run while automation does. A facepalm is seen on this
+              computer, with no AI call. Your mouth is checked on this computer too, and the vision model takes a look
+              only once it is open, less often while its looks find no tongue, as when you talk. Trigger phrases need
+              voice control to listen always.</p>
+              <div class="field">
+                <label for="reactions-cooldown_ms">Seconds between reactions the camera, rules, or trigger phrases
+                play (1 to 3600)</label>
+                <input id="reactions-cooldown_ms" type="number" min="1" max="3600" step="1"
+                  data-reactions="cooldown_ms" data-scale="1000" data-integer="true" data-integer-scaled="true">
+              </div>
+              <p id="reactions-status" class="hint" aria-live="polite"></p>
+              <ul id="reactions-presets" class="reaction-presets" aria-label="Reactions"></ul>
+            </fieldset>
+            <p class="hint">Settings apply after you save.</p>
+          </form>
+          <fieldset class="form" aria-describedby="settings-file-help">
+            <legend>Settings file</legend>
+            <p id="settings-file-help" class="hint">Save the layout, rules, cards, and the AI, voice, and subtitle
+            settings to one file to keep or share, or load such a file. API keys and consents are never in it.</p>
+            <div class="button-row">
+              <button type="button" id="settings-file-save">Save to file</button>
+              <button type="button" id="settings-file-load">Load from file</button>
+              <input id="settings-file-input" type="file" accept=".json,application/json" hidden>
+            </div>
+            <p id="settings-file-status" class="hint" aria-live="polite"></p>
+          </fieldset>
+        </div>
+
+        <div id="panel-camera" role="tabpanel" aria-labelledby="tab-camera" hidden></div>
+      </section>
+    </main>
+    <dialog id="setup-dialog" class="setup" aria-labelledby="setup-title"></dialog>
+    <div id="toasts" class="toasts" role="region" aria-label="Notifications"></div>
+    <div id="announcer" class="visually-hidden" aria-live="polite"></div>
+  </body>
+</html>

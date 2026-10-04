@@ -1,0 +1,162 @@
+/* Copyright (c) 2026 Alexander Picon, Chaski AI (https://chaski.ai). All rights reserved. */
+/* Proprietary software; see LICENSE. */
+
+/* Sceneuron editor styles: the element list, the preview, the live controls, and the events log. */
+
+/* Elements */
+
+.element-list {
+  margin: 0 0 12px;
+  padding: 0;
+  list-style: none;
+}
+
+.element-list li + li {
+  margin-top: 4px;
+}
+
+.element-item {
+  display: block;
+  width: 100%;
+  padding: 6px 10px;
+  text-align: left;
+}
+
+.element-item[aria-current="true"] {
+  border-color: var(--accent);
+  background: #3a3125;
+}
+
+.element-name {
+  display: block;
+  font-weight: 600;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.element-meta {
+  display: block;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.button-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 6px;
+  margin-bottom: 12px;
+}
+
+/* Preview */
+
+.preview {
+  position: relative;
+  width: 100%;
+  max-height: 60vh;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background-color: #222224;
+  background-image: conic-gradient(#2c2c2e 25%, transparent 0 50%, #2c2c2e 0 75%, transparent 0);
+  background-size: 24px 24px;
+  touch-action: none;
+  user-select: none;
+}
+
+.preview .sn-el {
+  cursor: grab;
+}
+
+.preview.dragging .sn-el {
+  cursor: grabbing;
+}
+
+.preview .sn-ghost .sn-body {
+  outline: calc(1.5px / var(--preview-scale, 1)) dashed rgba(255, 255, 255, 0.7);
+}
+
+.preview .sn-el.is-selected {
+  outline: calc(2px / var(--preview-scale, 1)) solid var(--focus);
+  outline-offset: calc(3px / var(--preview-scale, 1));
+}
+
+/* While a plan waits for review, the preview shows its result; what it adds or changes is marked. */
+.preview.is-plan-preview {
+  border-color: var(--accent);
+}
+
+.preview.is-plan-preview::after {
+  content: "Plan preview";
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  padding: 2px 10px;
+  border-radius: 999px;
+  background: var(--accent-strong);
+  color: var(--on-accent);
+  font-size: 0.8rem;
+  font-weight: 600;
+  pointer-events: none;
+}
+
+.preview.is-plan-preview .sn-el {
+  cursor: default;
+}
+
+.preview .sn-el.is-planned {
+  outline: calc(2px / var(--preview-scale, 1)) dashed var(--accent-text);
+  outline-offset: calc(3px / var(--preview-scale, 1));
+}
+
+/* Live controls and events */
+
+.live-grid {
+  display: grid;
+  gap: 8px;
+  padding: 10px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--raised);
+}
+
+.live-grid button {
+  background: var(--panel);
+}
+
+.inline-field input {
+  flex: 1 1 160px;
+  width: auto;
+}
+
+.spaced {
+  margin-top: 10px;
+}
+
+.divider {
+  width: 1px;
+  height: 24px;
+  background: var(--border);
+}
+
+.event-log {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: 13px;
+}
+
+.event-log li {
+  display: grid;
+  grid-template-columns: 72px 64px 1fr;
+  gap: 8px;
+  padding: 3px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.event-time,
+.event-source {
+  color: var(--muted);
+  font-variant-numeric: tabular-nums;
+}

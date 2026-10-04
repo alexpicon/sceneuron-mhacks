@@ -1,0 +1,55 @@
+<!-- Copyright (c) 2026 Alexander Picon, Chaski AI (https://chaski.ai). All rights reserved. -->
+<!-- Proprietary software; see LICENSE. -->
+
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="640" viewBox="0 0 1200 640" role="img" aria-labelledby="title desc">
+<title id="title">One Sceneuron, many surfaces</title>
+<desc id="desc">Shared live state keeps the browser and devices in sync.</desc>
+<defs>
+<linearGradient id="background" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#201b28"/><stop offset=".58" stop-color="#17151b"/><stop offset="1" stop-color="#121216"/></linearGradient>
+<linearGradient id="card" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#2b2732"/><stop offset="1" stop-color="#201e25"/></linearGradient>
+<radialGradient id="aura"><stop stop-color="#d6a76c" stop-opacity=".16"/><stop offset="1" stop-color="#d6a76c" stop-opacity="0"/></radialGradient>
+<pattern id="dots" width="28" height="28" patternUnits="userSpaceOnUse"><circle cx="1" cy="1" r="1" fill="#9f89c4" opacity=".13"/></pattern>
+<filter id="shadow" x="-20%" y="-30%" width="140%" height="170%"><feDropShadow dx="0" dy="12" stdDeviation="16" flood-color="#08070b" flood-opacity=".45"/></filter>
+<marker id="arrow" markerWidth="9" markerHeight="9" refX="7.5" refY="4.5" orient="auto"><path d="M1 1 L8 4.5 L1 8" fill="none" stroke="#d6a76c" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></marker>
+</defs>
+<rect x="0" y="0" width="1200" height="640" rx="0" fill="url(#background)" stroke="none" />
+<rect x="0" y="0" width="1200" height="640" rx="0" fill="url(#dots)" stroke="none" />
+<circle cx="1050" cy="30" r="430" fill="url(#aura)"/>
+<rect x="54" y="48" width="7" height="70" rx="3" fill="#d6a76c" stroke="none" />
+<text x="78" y="61" fill="#d6a76c" font-size="13" font-weight="700" letter-spacing="3" font-family="Inter, ui-sans-serif, system-ui, -apple-system, sans-serif">SCENEURON / SYSTEM</text>
+<text x="78" y="108" fill="#f2f0ed" font-size="38" font-weight="750" letter-spacing="0" font-family="Inter, ui-sans-serif, system-ui, -apple-system, sans-serif">One Sceneuron, many surfaces</text>
+<text x="80" y="143" fill="#b9b2c2" font-size="17" font-weight="400" letter-spacing="0" font-family="Inter, ui-sans-serif, system-ui, -apple-system, sans-serif">Shared live state keeps the browser and devices in sync.</text>
+<path d="M 54 171 L 1146 171" fill="none" stroke="#4b4254" stroke-width="1" />
+<path d="M 54 594 L 1146 594" fill="none" stroke="#4b4254" stroke-width="1" />
+<text x="55" y="619" fill="#8f879b" font-size="12" font-weight="700" letter-spacing="2.5" font-family="Inter, ui-sans-serif, system-ui, -apple-system, sans-serif">SCENEURON</text>
+<text x="1097" y="619" fill="#d6a76c" font-size="12" font-weight="700" letter-spacing="2" font-family="Inter, ui-sans-serif, system-ui, -apple-system, sans-serif">22</text>
+<path d="M 342 285.5 C 391.5 285.5, 391.5 374, 441 374" fill="none" stroke="#d6a76c" stroke-opacity=".75" stroke-width="2.4" marker-end="url(#arrow)"/>
+<path d="M 858 285.5 C 808.5 285.5, 808.5 374, 759 374" fill="none" stroke="#d6a76c" stroke-opacity=".75" stroke-width="2.4" marker-end="url(#arrow)"/>
+<path d="M 342 466.5 C 391.5 466.5, 391.5 374, 441 374" fill="none" stroke="#d6a76c" stroke-opacity=".75" stroke-width="2.4" marker-end="url(#arrow)"/>
+<path d="M 858 466.5 C 808.5 466.5, 808.5 374, 759 374" fill="none" stroke="#d6a76c" stroke-opacity=".75" stroke-width="2.4" marker-end="url(#arrow)"/>
+<rect x="54" y="218" width="288" height="135" rx="19" fill="url(#card)" stroke="#4b4254" filter="url(#shadow)"/>
+<rect x="72" y="235" width="45" height="4" rx="2" fill="#b99bf0" stroke="none" />
+<text x="74" y="270" fill="#b99bf0" font-size="15" font-weight="700" letter-spacing="2.5" font-family="Inter, ui-sans-serif, system-ui, -apple-system, sans-serif">01</text>
+<text x="74" y="301" fill="#f2f0ed" font-size="20" font-weight="700" letter-spacing="0" font-family="Inter, ui-sans-serif, system-ui, -apple-system, sans-serif">OBS</text>
+<text x="74" y="327" fill="#b9b2c2" font-size="14" font-weight="400" letter-spacing="0" font-family="Inter, ui-sans-serif, system-ui, -apple-system, sans-serif">Camera, audio, output</text>
+<rect x="858" y="218" width="288" height="135" rx="19" fill="url(#card)" stroke="#4b4254" filter="url(#shadow)"/>
+<rect x="876" y="235" width="45" height="4" rx="2" fill="#78c5da" stroke="none" />
+<text x="878" y="270" fill="#78c5da" font-size="15" font-weight="700" letter-spacing="2.5" font-family="Inter, ui-sans-serif, system-ui, -apple-system, sans-serif">02</text>
+<text x="878" y="301" fill="#f2f0ed" font-size="20" font-weight="700" letter-spacing="0" font-family="Inter, ui-sans-serif, system-ui, -apple-system, sans-serif">Browser</text>
+<text x="878" y="327" fill="#b9b2c2" font-size="14" font-weight="400" letter-spacing="0" font-family="Inter, ui-sans-serif, system-ui, -apple-system, sans-serif">Edit and display</text>
+<rect x="54" y="399" width="288" height="135" rx="19" fill="url(#card)" stroke="#4b4254" filter="url(#shadow)"/>
+<rect x="72" y="416" width="45" height="4" rx="2" fill="#71d8a5" stroke="none" />
+<text x="74" y="451" fill="#71d8a5" font-size="15" font-weight="700" letter-spacing="2.5" font-family="Inter, ui-sans-serif, system-ui, -apple-system, sans-serif">03</text>
+<text x="74" y="482" fill="#f2f0ed" font-size="20" font-weight="700" letter-spacing="0" font-family="Inter, ui-sans-serif, system-ui, -apple-system, sans-serif">Stream Deck</text>
+<text x="74" y="508" fill="#b9b2c2" font-size="14" font-weight="400" letter-spacing="0" font-family="Inter, ui-sans-serif, system-ui, -apple-system, sans-serif">Paired key actions</text>
+<rect x="858" y="399" width="288" height="135" rx="19" fill="url(#card)" stroke="#4b4254" filter="url(#shadow)"/>
+<rect x="876" y="416" width="45" height="4" rx="2" fill="#ed9eaa" stroke="none" />
+<text x="878" y="451" fill="#ed9eaa" font-size="15" font-weight="700" letter-spacing="2.5" font-family="Inter, ui-sans-serif, system-ui, -apple-system, sans-serif">04</text>
+<text x="878" y="482" fill="#f2f0ed" font-size="20" font-weight="700" letter-spacing="0" font-family="Inter, ui-sans-serif, system-ui, -apple-system, sans-serif">Shared room</text>
+<text x="878" y="508" fill="#b9b2c2" font-size="14" font-weight="400" letter-spacing="0" font-family="Inter, ui-sans-serif, system-ui, -apple-system, sans-serif">Private then revealed</text>
+<rect x="441" y="291" width="318" height="166" rx="25" fill="#2c2733" stroke="#d6a76c" filter="url(#shadow)" stroke-width="2"/>
+<text x="465" y="337" fill="#d6a76c" font-size="13" font-weight="700" letter-spacing="2.8" font-family="Inter, ui-sans-serif, system-ui, -apple-system, sans-serif">LIVE CORE</text>
+<text x="465" y="383" fill="#f2f0ed" font-size="27" font-weight="750" letter-spacing="0" font-family="Inter, ui-sans-serif, system-ui, -apple-system, sans-serif">Sceneuron</text>
+<text x="465" y="416" fill="#b9b2c2" font-size="16" font-weight="400" letter-spacing="0" font-family="Inter, ui-sans-serif, system-ui, -apple-system, sans-serif">Cards, rules, current view</text>
+<rect x="54" y="541" width="1092" height="39" rx="12" fill="#242129" stroke="#4b4254" /><text x="73" y="566" fill="#d6a76c" font-size="15" font-weight="600" letter-spacing="0" font-family="Inter, ui-sans-serif, system-ui, -apple-system, sans-serif">Optional AI and voice require their own settings and consent.</text>
+</svg>

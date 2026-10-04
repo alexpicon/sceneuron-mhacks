@@ -1,0 +1,74 @@
+# Copyright (c) 2026 Alexander Picon, Chaski AI (https://chaski.ai). All rights reserved.
+# Proprietary software; see LICENSE.
+
+[workspace]
+resolver = "3"
+members = ["crates/*"]
+# The SpacetimeDB module builds for wasm32 with the spacetime CLI and keeps its own lockfile.
+exclude = ["room/module"]
+
+[workspace.package]
+version = "0.1.0"
+authors = ["Alexander Picon", "Chaski AI (https://chaski.ai)"]
+edition = "2024"
+rust-version = "1.91"
+# Proprietary: LICENSE grants no license. sceneuron-notices never lists or gates these crates.
+license-file = "LICENSE"
+repository = "https://github.com/alexpicon/sceneuron"
+publish = false
+
+[workspace.dependencies]
+base64 = "0.23"
+getrandom = "0.3"
+hmac = "0.12"
+jpeg-decoder = { version = "0.3", default-features = false }
+jpeg-encoder = "0.7"
+log = "0.4"
+objc2 = "0.6.4"
+objc2-core-foundation = { version = "0.3.2", default-features = false }
+objc2-core-graphics = { version = "0.3.2", default-features = false }
+objc2-core-text = { version = "0.3.2", default-features = false }
+objc2-foundation = { version = "0.3.2", default-features = false }
+objc2-vision = { version = "0.3.2", default-features = false }
+# The ring provider only, as ureq uses it: no aws-lc, cmake, or nasm in cross builds.
+rustls = { version = "0.23", default-features = false, features = ["logging", "ring", "std", "tls12"] }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+sha2 = "0.10"
+tract-onnx = "0.23"
+# The WebSocket protocol only; TLS comes from rustls above.
+tungstenite = { version = "0.30", default-features = false, features = ["handshake"] }
+# TLS through rustls with ring and bundled roots: no aws-lc, cmake, or nasm in cross builds.
+ureq = { version = "3", default-features = false, features = ["rustls"] }
+webpki-roots = "1"
+
+sceneuron-ai = { path = "crates/sceneuron-ai" }
+sceneuron-core = { path = "crates/sceneuron-core" }
+sceneuron-obs-sys = { path = "crates/sceneuron-obs-sys" }
+sceneuron-room = { path = "crates/sceneuron-room" }
+sceneuron-server = { path = "crates/sceneuron-server" }
+sceneuron-vision = { path = "crates/sceneuron-vision" }
+sceneuron-vision-apple = { path = "crates/sceneuron-vision-apple" }
+sceneuron-voice = { path = "crates/sceneuron-voice" }
+
+[workspace.lints.rust]
+unsafe_op_in_unsafe_fn = "deny"
+
+[workspace.lints.clippy]
+undocumented_unsafe_blocks = "warn"
+
+# Dependencies (notably tract) are slow when unoptimized and rarely change, so
+# they are optimized once and cached; workspace crates stay fast to rebuild.
+[profile.dev]
+debug = "line-tables-only"
+
+[profile.dev.package."*"]
+debug = false
+opt-level = 2
+
+# Pixel conversion runs on OBS's video thread; unoptimized it costs tens of milliseconds per frame.
+[profile.dev.package.sceneuron-vision]
+opt-level = 2
+
+[profile.release]
+lto = "thin"

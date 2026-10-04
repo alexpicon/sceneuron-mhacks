@@ -1,0 +1,16 @@
+Copyright (c) 2026 Alexander Picon and Chaski AI (https://chaski.ai). All rights reserved.
+
+Sceneuron, including its source code and documentation, is proprietary software of Alexander
+Picon and Chaski AI.
+
+No license is granted to use, copy, modify, or distribute the software or its documentation, in
+whole or in part, except by written permission from Chaski AI. To ask for permission, contact
+Chaski AI at https://chaski.ai.
+
+Third-party components remain under their own licenses. Among them are the Rust crates and npm
+packages included in Sceneuron's plugins, and the UltraFace face detection model in
+crates/sceneuron-vision/models/, which is under the MIT license in LICENSE-ultraface.txt there.
+The third-party notices the build writes list each component a plugin package ships, with its
+license: the OBS plugin package carries THIRD-PARTY-NOTICES.txt, written by the
+sceneuron-notices crate, for the crates compiled into the plugin and the model, and the Stream
+Deck plugin carries bin/third-party-notices.txt for the npm packages bundled into it.

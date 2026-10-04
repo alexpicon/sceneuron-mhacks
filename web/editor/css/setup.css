@@ -1,0 +1,86 @@
+/* Copyright (c) 2026 Alexander Picon, Chaski AI (https://chaski.ai). All rights reserved. */
+/* Proprietary software; see LICENSE. */
+
+/* Sceneuron editor styles: the setup wizard dialog with its steps and example descriptions. */
+
+/* Setup wizard */
+
+.setup {
+  width: min(640px, calc(100vw - 32px));
+  max-height: calc(100vh - 48px);
+  padding: 0;
+  border: 1px solid var(--accent-strong);
+  border-radius: 12px;
+  background: var(--panel);
+  color: var(--text);
+  box-shadow: 0 24px 64px rgba(0, 0, 0, 0.6);
+}
+
+.setup::backdrop {
+  background: rgba(12, 12, 13, 0.72);
+}
+
+.setup-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 20px 10px;
+}
+
+.setup-head h2 {
+  margin: 0;
+  font-size: 18px;
+}
+
+button.icon {
+  min-width: 32px;
+  padding: 2px 8px;
+  font-size: 18px;
+  line-height: 1;
+}
+
+.steps {
+  display: flex;
+  gap: 8px;
+  margin: 0;
+  padding: 0 20px 12px;
+  border-bottom: 1px solid var(--border);
+  list-style: none;
+}
+
+.steps li {
+  flex: 1;
+  padding: 4px 8px;
+  border-radius: 6px;
+  background: var(--raised);
+  color: var(--muted);
+  font-size: 13px;
+  text-align: center;
+}
+
+.steps li[aria-current="step"] {
+  background: var(--accent-strong);
+  color: var(--on-accent);
+  font-weight: 600;
+}
+
+.setup [data-setup-step] {
+  padding: 16px 20px 20px;
+}
+
+.setup [data-setup-step] > label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 600;
+}
+
+.example-chips {
+  display: grid;
+  gap: 6px;
+  margin-bottom: 12px;
+}
+
+.example-chip {
+  border-style: dashed;
+  text-align: left;
+}

@@ -1,0 +1,26 @@
+/* Copyright (c) 2026 Alexander Picon, Chaski AI (https://chaski.ai). All rights reserved. */
+/* Proprietary software; see LICENSE. */
+
+/* Sceneuron overlay fonts for subtitles written in a script of their own, at the code points the Under-ConScript
+   Unicode Registry gives those scripts: Tengwar in Alcarin Tengwar, pIqaD in pIqaD qolqoS, and sitelen pona in
+   nasin nanpa (fonts/README.md). Each covers only its script's block, so any other text keeps its own font; pIqaD's
+   last code point, a logo, is left out. render-subtitles.js puts these families first for subtitle text. */
+
+@font-face {
+  font-family: "Sceneuron Tengwar";
+  src: url("/assets/fonts/AlcarinTengwarVF.woff2") format("woff2");
+  font-weight: 400 700;
+  unicode-range: U+E000-E07F;
+}
+
+@font-face {
+  font-family: "Sceneuron pIqaD";
+  src: url("/assets/fonts/pIqaD-qolqoS.ttf") format("truetype");
+  unicode-range: U+F8D0-F8FE;
+}
+
+@font-face {
+  font-family: "Sceneuron sitelen pona";
+  src: url("/assets/fonts/nasin-nanpa-4.0.2-UCSUR.otf") format("opentype");
+  unicode-range: U+F1900-F19FF;
+}

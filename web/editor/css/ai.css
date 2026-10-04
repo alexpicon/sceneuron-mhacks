@@ -1,0 +1,249 @@
+/* Copyright (c) 2026 Alexander Picon, Chaski AI (https://chaski.ai). All rights reserved. */
+/* Proprietary software; see LICENSE. */
+
+/* Sceneuron editor styles: the AI chip's states and the AI tab's scene understanding card, provider, pace, and
+   budget settings, and Voice section. */
+
+/* AI chip */
+
+.chip[hidden] {
+  display: none;
+}
+
+.chip[data-state="watching"]::before {
+  background: var(--ok);
+}
+
+.chip[data-state="thinking"]::before {
+  background: var(--accent);
+  animation: chip-pulse 0.9s ease-in-out infinite alternate;
+}
+
+.chip[data-state="needs_setup"]::before {
+  background: var(--warn);
+}
+
+@keyframes chip-pulse {
+  from {
+    opacity: 0.35;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+/* Sections */
+
+.section-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.section-head h2,
+.section-head h3 {
+  margin: 0;
+}
+
+h4 {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.25;
+}
+
+.note {
+  padding: 8px 10px;
+  border-left: 3px solid var(--accent);
+  border-radius: 0 6px 6px 0;
+  background: #2f2a24;
+  font-size: 13px;
+}
+
+.ai-card {
+  margin-bottom: 16px;
+  padding: 12px;
+  border: 1px solid #5c4a33;
+  border-radius: 10px;
+  background: linear-gradient(180deg, #2b2621, var(--panel) 70%);
+}
+
+.ai-section {
+  margin-bottom: 16px;
+}
+
+.consent-points {
+  margin: -4px 0 12px 26px;
+  padding: 0;
+  color: var(--muted);
+  font-size: 13px;
+  list-style: none;
+}
+
+.consent-points li + li {
+  margin-top: 3px;
+}
+
+.consent-points strong {
+  color: var(--text);
+  font-weight: 600;
+}
+
+/* A checkbox drawn as an on and off switch; the label beside it says what it does. */
+.switch input[type="checkbox"] {
+  position: relative;
+  flex: none;
+  width: 38px;
+  height: 22px;
+  border: 1px solid var(--field-border);
+  border-radius: 999px;
+  background: var(--field);
+  cursor: pointer;
+  appearance: none;
+  transition: background-color 0.15s;
+}
+
+.switch input[type="checkbox"]::before {
+  content: "";
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--muted);
+  transition: transform 0.15s;
+}
+
+.switch input[type="checkbox"]:checked {
+  border-color: var(--accent);
+  background: var(--accent-strong);
+}
+
+.switch input[type="checkbox"]:checked::before {
+  background: var(--on-accent);
+  transform: translateX(16px);
+}
+
+.switch label {
+  font-weight: 600;
+}
+
+.ai-stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6px;
+  margin: 12px 0 10px;
+}
+
+.ai-stats div {
+  padding: 6px 8px;
+  border-radius: 6px;
+  background: var(--raised);
+}
+
+.ai-stats dt {
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.ai-stats dd {
+  margin: 0;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+
+.budget {
+  display: grid;
+  gap: 4px;
+  margin-bottom: 12px;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+meter {
+  width: 100%;
+  height: 10px;
+}
+
+.scene {
+  margin: 0 0 12px;
+}
+
+.scene figcaption {
+  margin-bottom: 4px;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.scene blockquote {
+  margin: 0;
+  padding: 8px 10px;
+  border-left: 3px solid var(--accent);
+  border-radius: 0 6px 6px 0;
+  background: var(--field);
+  font-style: italic;
+}
+
+/* Provider, pace, and budget */
+
+.ai-details {
+  margin-bottom: 12px;
+  padding: 0 12px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+}
+
+.ai-details summary {
+  padding: 10px 0;
+  color: var(--accent-text);
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.ai-details[open] summary {
+  margin-bottom: 10px;
+  border-bottom: 1px solid var(--border);
+}
+
+input[type="password"] {
+  width: 100%;
+  min-height: 32px;
+  padding: 5px 8px;
+  border: 1px solid var(--field-border);
+  border-radius: 6px;
+  background: var(--field);
+}
+
+/* Voice */
+
+.talk {
+  min-width: 140px;
+  min-height: 40px;
+  font-weight: 600;
+}
+
+.talk[aria-pressed="true"] {
+  border-color: var(--accent);
+  background: var(--accent-strong);
+  color: var(--on-accent);
+}
+
+.heard {
+  margin: 0 0 12px;
+  padding: 8px 10px;
+  border-left: 3px solid var(--accent);
+  border-radius: 0 6px 6px 0;
+  background: var(--field);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .chip::before,
+  .switch input[type="checkbox"],
+  .switch input[type="checkbox"]::before {
+    animation: none;
+    transition: none;
+  }
+}

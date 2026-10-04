@@ -1,0 +1,85 @@
+<!doctype html>
+<!-- Copyright (c) 2026 Alexander Picon, Chaski AI (https://chaski.ai). All rights reserved. -->
+<!-- Proprietary software; see LICENSE. -->
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Sceneuron</title>
+    <link rel="stylesheet" href="inspector.css" />
+  </head>
+  <body>
+    <section aria-label="Action">
+      <div class="item" id="deck-item" hidden>
+        <label for="deck">Deck</label>
+        <select id="deck"></select>
+      </div>
+      <div class="item" id="card-item" hidden>
+        <label for="card">Card</label>
+        <select id="card"></select>
+      </div>
+      <div class="item" id="element-item" hidden>
+        <label for="element">Element</label>
+        <select id="element"></select>
+      </div>
+      <div class="item" id="reaction-item" hidden>
+        <label for="reaction">Reaction</label>
+        <select id="reaction"></select>
+      </div>
+      <p class="note" id="automation-note" hidden>
+        Pauses or resumes Sceneuron's rules and camera signals. The key shows which is on.
+      </p>
+      <p class="note" id="dial-note" hidden>
+        Each turn shows the deck's next or previous card at once. Press to lower the card, press again to raise
+        it. Touch and hold to lower the deck.
+      </p>
+      <p class="note" id="talk-note" hidden>
+        Hold while you speak to Sceneuron's voice control, then let go. It works only while voice control is on
+        in the editor's AI tab; this key never turns it on or changes your consent.
+      </p>
+      <p class="note" id="reaction-note" hidden>
+        Plays the reaction on the overlay at once, whatever the cooldown that rules and the camera wait for. The
+        key lights up while it plays, whoever played it.
+      </p>
+      <p class="note" id="room-note" hidden>
+        Acts on the shared planning poker room joined in the editor's Cards tab: Reveal votes shows everyone's
+        votes, and Next round lowers every card and clears the votes. Without a room the key says No room.
+      </p>
+    </section>
+
+    <section aria-labelledby="connection-heading">
+      <h2 id="connection-heading">Sceneuron</h2>
+      <p class="note" id="status" role="status"></p>
+      <details id="pair-details">
+        <summary id="pair-summary">Pair with Sceneuron</summary>
+        <form id="pair-form" autocomplete="off">
+          <p class="note">
+            In the Sceneuron editor's Cards tab, choose Pair the Stream Deck on this computer, and every key
+            pairs at once. Or choose Connect a Stream Deck, and enter the port and the six-digit code it shows
+            within two minutes.
+          </p>
+          <div class="item">
+            <label for="port">Port</label>
+            <input id="port" inputmode="numeric" maxlength="5" required />
+          </div>
+          <div class="item">
+            <label for="code">Code</label>
+            <input id="code" inputmode="numeric" maxlength="7" placeholder="6 digits" required />
+          </div>
+          <div class="item">
+            <span></span>
+            <button type="submit" id="pair">Pair</button>
+          </div>
+        </form>
+      </details>
+      <p class="note" id="pair-result" aria-live="polite"></p>
+      <div class="item" id="forget-item" hidden>
+        <span></span>
+        <button type="button" id="forget">Forget this Sceneuron</button>
+      </div>
+    </section>
+
+    <script src="inspector-model.js"></script>
+    <script src="inspector.js"></script>
+  </body>
+</html>

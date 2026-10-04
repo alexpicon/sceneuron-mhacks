@@ -1,0 +1,147 @@
+/* Copyright (c) 2026 Alexander Picon, Chaski AI (https://chaski.ai). All rights reserved. */
+/* Proprietary software; see LICENSE. */
+
+/* Sceneuron editor styles: the top bar, the three-panel layout, the error banner, and the status chips. */
+
+/* Layout */
+
+.topbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 16px;
+  padding: 8px 16px;
+  border-bottom: 1px solid var(--border);
+  background: var(--panel);
+}
+
+.brand {
+  margin: 0;
+  color: var(--accent-text);
+  letter-spacing: 0.02em;
+}
+
+.status,
+.save-area,
+.button-row,
+.inline-field,
+.color-row,
+.range-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+}
+
+.save-area {
+  margin-left: auto;
+}
+
+.layout {
+  flex: 1;
+  min-height: 0;
+  display: grid;
+  grid-template-columns: 220px minmax(0, 1fr) 380px;
+  gap: 12px;
+  padding: 12px;
+}
+
+.panel {
+  position: relative;
+  min-height: 0;
+  overflow: auto;
+  padding: 12px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--panel);
+}
+
+.center > section + section {
+  margin-top: 16px;
+}
+
+@media (max-width: 1100px) {
+  html,
+  body {
+    height: auto;
+  }
+
+  .layout {
+    grid-template-columns: 1fr;
+  }
+
+  .panel {
+    overflow: visible;
+  }
+}
+
+.banner {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 16px;
+  border-bottom: 1px solid var(--danger-strong);
+  background: #2a1020;
+}
+
+.banner p {
+  margin: 0;
+}
+
+.banner[hidden] {
+  display: none;
+}
+
+/* Status chips */
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 28px;
+  padding: 3px 10px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: var(--raised);
+  white-space: nowrap;
+}
+
+.chip::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--muted);
+}
+
+.chip[data-state="present"]::before,
+.chip[data-state="running"]::before,
+.chip[data-state="on"]::before,
+.chip[data-state="live"]::before {
+  background: var(--ok);
+}
+
+.chip[data-state="away"]::before,
+.chip[data-state="starting"]::before,
+.chip[data-state="paused"]::before,
+.chip[data-state="connecting"]::before {
+  background: var(--warn);
+}
+
+.chip[data-state="failed"]::before,
+.chip[data-state="offline"]::before {
+  background: var(--danger);
+}
+
+.dirty-indicator {
+  color: var(--muted);
+}
+
+.dirty-indicator[data-dirty="true"] {
+  color: var(--warn);
+  font-weight: 600;
+}
+
+.dirty-indicator[data-dirty="true"]::before {
+  content: "\25CF  ";
+}
