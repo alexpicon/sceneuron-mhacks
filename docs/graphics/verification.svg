@@ -50,5 +50,5 @@
 <text x="914" y="315" fill="#f2f0ed" font-size="23" font-weight="700" letter-spacing="0" font-family="Inter, ui-sans-serif, system-ui, -apple-system, sans-serif">Person</text>
 <text x="914" y="354" fill="#b9b2c2" font-size="16" font-weight="400" letter-spacing="0" font-family="Inter, ui-sans-serif, system-ui, -apple-system, sans-serif">Uses camera, mic,</text>
 <text x="914" y="379" fill="#b9b2c2" font-size="16" font-weight="400" letter-spacing="0" font-family="Inter, ui-sans-serif, system-ui, -apple-system, sans-serif">keys, and video</text>
-<rect x="54" y="541" width="1092" height="39" rx="12" fill="#242129" stroke="#4b4254" /><text x="73" y="566" fill="#d6a76c" font-size="15" font-weight="600" letter-spacing="0" font-family="Inter, ui-sans-serif, system-ui, -apple-system, sans-serif">Only the owner accepts the final commit candidate.</text>
+<rect x="54" y="541" width="1092" height="39" rx="12" fill="#242129" stroke="#4b4254" /><text x="73" y="566" fill="#d6a76c" font-size="15" font-weight="600" letter-spacing="0" font-family="Inter, ui-sans-serif, system-ui, -apple-system, sans-serif">Accept the commit candidate after the hands-on test.</text>
 </svg>

@@ -5,7 +5,7 @@
 `package.sh` turns a built Sceneuron library into the OBS 32 user-plugin bundle
 for macOS and zips it. It runs on macOS.
 
-Sceneuron is Mac-only for now, by the owner's decision of 2026-10-03; Windows
+Sceneuron has targeted macOS only since 2026-10-03; Windows
 and Linux are planned, coming very soon. Asked for `--os linux` or
 `--os windows`, the script stops with a usage error that says so. The last
 `main` that packaged for Linux and Windows is the pushed tag

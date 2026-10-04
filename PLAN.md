@@ -15,7 +15,7 @@ How to read it:
   server (see [6.2](#62-tokens)). "The engine" is `sceneuron_core::Engine`. "The hub" is
   `sceneuron_server::Hub`.
 - Section 9 is the build order; section 10 lists what to verify against external services and real
-  hardware, the design risks, and the decisions left to the owner.
+  hardware, the design risks, and the decisions still open.
 
 ## Contents
 
@@ -100,7 +100,7 @@ How to read it:
   - [10.1 Verify against external services](#101-verify-against-external-services)
   - [10.2 Verify on real hardware and in OBS](#102-verify-on-real-hardware-and-in-obs)
   - [10.3 Design risks and limits](#103-design-risks-and-limits)
-  - [10.4 Decisions for the owner](#104-decisions-for-the-owner)
+  - [10.4 Decisions to make](#104-decisions-to-make)
 
 ## 1. Purpose, users, and scope
 
@@ -111,11 +111,11 @@ How to read it:
   Virtual Camera the same overlays reach Zoom, Microsoft Teams, and Google Meet.
 - The user stays in charge from the editor, the camera (hand signals), their voice, an Elgato Stream
   Deck, OBS hotkeys, and obs-websocket.
-- Working name: Sceneuron ("scene" + "neuron"), matching the owner's `sceneuron` directory. Do not
+- Working name: Sceneuron ("scene" + "neuron"), matching my `sceneuron` directory. Do not
   use Cueglass (an exact CueGlass name collision) or SceneCortex. "Sceneuron for OBS" is acceptable
   as a planning display name. The final public name, tagline, domain, and trademark are open (B11).
 - Owner and copyright holder: Alexander Picon and his company Chaski AI (https://chaski.ai) (R29).
-  The tested hardware is "Alex's 15-key Stream Deck", simulated on the owner's Stream Deck XL using
+  The tested hardware is a 15-key Stream Deck layout, simulated on my Stream Deck XL using
   its top-left 5x3 block. The repository URL in manifests is `https://github.com/alexpicon/sceneuron`;
   the repository is private.
 - The project starts 2026-10-01. Event: MHacks 2026; Devpost closes 12:15 PM EDT 2026-10-04.
@@ -189,8 +189,8 @@ packs into one's own decks, one person into a team room, and one language into u
 | Judged by an LLM (side quest) | Clear README and pitch with verifiable claims | |
 
 - Not a fit: Sustainability, FinTech, sponsor tracks requiring a specific product, MLH Solana. The
-  .Tech domain prize is the owner's call.
-- Not pursued, by the owner's choice: Presage SmartSpectra (closed SDK needing a separate signed
+  .Tech domain prize is my call.
+- Not pursued, by my choice: Presage SmartSpectra (closed SDK needing a separate signed
   helper app, Apple Silicon and macOS 14, online key checks, health data) and Tiger Data (needs its
   own Postgres wire client without tokio or OpenSSL).
 - Submission constraints: the Hacker Handbook requires all coding between 12 PM 2026-10-03 and 12 PM
@@ -230,7 +230,7 @@ packs into one's own decks, one person into a team room, and one language into u
 | R24 | Easter egg: tongue out floods the screen with tongue-out emojis | "Tongue out" reaction preset |
 | R25 | Live camera preview in the editor; choose the microphone | The "Camera & mic" tab |
 | R26 | More subtitle languages, fictional ones too | 139 natural plus 15 constructed named languages, plus any well-formed BCP 47 tag |
-| R27 | The owner's setup is the starting setup of a fresh install | `starter/project.json`, `starter/ai.json`, "Set up OBS for me" |
+| R27 | My setup is the starting setup of a fresh install | `starter/project.json`, `starter/ai.json`, "Set up OBS for me" |
 | R28 | Hand signals by context | Resolved by context in `votes.rs` and `signal_context.rs` |
 | R29 | Proprietary; author and copyright holder Alexander Picon, Chaski AI | LICENSE file, copyright headers, package metadata, `UNLICENSED` npm package |
 | R30 | macOS only for now; Linux and Windows set aside as planned | The OBS crates `compile_error!` on other targets |
@@ -333,7 +333,7 @@ Non-goals and explicit limits:
 | Control view | The privacy-reduced state for control surfaces such as the Stream Deck |
 | Hub | The runtime wrapper around the engine: lock, clock, publishing, listeners, debounced saves |
 | Host | The embedding application (OBS plugin or `sceneuron-dev`) behind the `Host` trait |
-| Starter | The owner's setup that a fresh install starts from (`starter/project.json`, `starter/ai.json`) |
+| Starter | My setup that a fresh install starts from (`starter/project.json`, `starter/ai.json`) |
 | Pairing code | A 6-digit, 120 s code that a control surface trades for the control token |
 | Hello proof | HMAC-SHA256 of `"<nonce>:<port>"` under a token, proving the server holds it |
 | Seen line | The on-device scene sentence, placeholder `{{seen}}` (4.20) |
@@ -816,7 +816,7 @@ conditions until the settings change; answers about outdated settings or conditi
 still billed.
 
 Acceptance: `sceneuron-ai` director, gate, judge, and Gemini tests; the OBS proof AI checks
-(scripted vision model `e2e/mock-vlm.mjs`). Acceptance (live, by hand, with the owner's approval
+(scripted vision model `e2e/mock-vlm.mjs`). Acceptance (live, by hand, with my approval
 since it spends credits): one Gemini vision call at low effort returns a judgment; with
 `gemini-3.8-flash` the reference call uses about 2,005 tokens in and 145 out, about $0.00205, and
 may take up to about 9 s (8,794 ms is a slow call, not the norm).
@@ -1121,7 +1121,7 @@ release's commit joins that turn; a refused key stops listening until the settin
 press.
 
 Acceptance: core `voice_*.rs`; `sceneuron-voice` tests; ai `hub_voice.rs`. Acceptance (live, by
-hand, with the owner's approval since it spends credits): with `e2e/voice-live.mjs`, a synthesized
+hand, with my approval since it spends credits): with `e2e/voice-live.mjs`, a synthesized
 "Sceneuron, wrap it up" raises the card through the real API.
 
 ### 4.10 Live subtitles and stream captions
@@ -1172,7 +1172,7 @@ Behavior:
 Acceptance: core `subtitles_*.rs`; ai `translator*.rs`, `subtitle_settings*.rs`,
 `hub_subtitles*.rs`; plugin `captions.rs`; browser `subtitle-steps.mjs`; OBS proof Subtitles checks
 (simulated line). Verify by hand against the real APIs with `e2e/subtitles-live.mjs` (10.1), with
-the owner's approval since it spends credits.
+my approval since it spends credits.
 
 ### 4.11 Fun reactions and meeting reactions
 
@@ -1213,7 +1213,7 @@ Behavior:
 - Camera reactions run only while reactions are enabled, the preset's camera is on, and automation
   runs. Pausing or switching reactions off forgets the reaction state.
 - Rules, the camera, and trigger phrases are held to the cooldown (`max(cooldown_ms, 1000)` since
-  the last flood began; 3 s by default, settable from 1 to 3600 s, at the owner's request).
+  the last flood began; 3 s by default, settable from 1 to 3600 s, at my request).
   Manual plays ("Try it", `POST /api/flood {"flood": id}` with the editor or control
   token, the Stream Deck Reaction key, a reaction named after the wake word) play at once and
   restart the cooldown.
@@ -1290,7 +1290,7 @@ OBS's browser source (10.2).
   768, voice mode `always_on`, subtitle targets `["ja"]`, `stream_captions` true, every `enabled`
   and `consent` false, all keys empty. Nothing leaves the computer until the user adds a key,
   consents, and switches a feature on.
-- Starter project contents are in [5.1.6](#516-default-and-starter-projects) (the owner's layout;
+- Starter project contents are in [5.1.6](#516-default-and-starter-projects) (my layout;
   theme Graphite; the Live description bar and the on-air pill and timer shown; reactions on with a
   3 s cooldown; poker and meeting decks with camera, voice, and speak on; Meeting signals reading
   only thumbs).
@@ -1548,7 +1548,7 @@ User stories:
   anything anywhere.
 - As a viewer I read, under that line, the AI's richer sentence about the scene and how old it is.
 
-Who writes what (an owner requirement; the editor, the project's README, and any help text must
+Who writes what (my requirement; the editor, the project's README, and any help text must
 keep it this clear):
 
 | Line | Written by | Where it runs | Cost | How often |
@@ -1557,7 +1557,7 @@ keep it this clear):
 | 2, `{{scene:age}}`: "A person wearing headphones sticks their tongue out at the camera. (just now)" | the vision model (Gemini), the caption of a look | Google | one look each (about $0.002) | at most one look every 2.5 s, when the picture changes or 20 s passed |
 | (not on the bar) the AI tab's "Quick judgments" | TypeSafe's Jev, from line 1's facts as text | TypeSafe | a tiny fraction of a look | whenever the facts change |
 
-Acceptance (live, with the owner's camera in OBS; 10.2): with one person sticking a tongue out, the
+Acceptance (live, with my camera in OBS; 10.2): with one person sticking a tongue out, the
 bar reads like "1 person; mouth open; seen: headphones, bookshelf, jewelry; text: “h”" over "A
 person wearing headphones sticks their tongue out at the camera. (just now)"; with two people in
 view and only the smaller one sticking a tongue out, line 1 reads "2 people; mouth open; seen: ..."
@@ -1593,7 +1593,7 @@ Behavior:
   `{{scene}}`. A line made only of placeholders that all show nothing is left out; a text that shows
   `{{seen}}` or subtitles hides while it renders empty.
 - The "Live description" element: text `{{seen}}\n{{scene:age}}`. The starter project has it visible
-  at x 47, y 540, 1100 x 110, font 28, left of the camera frame (at the owner's request: "that's
+  at x 47, y 540, 1100 x 110, font 28, left of the camera frame (as requested: "that's
   what I think should be displayed on stream"). The editor's Elements tab has "Add
   live description" (a second click only selects the existing bar), and the Cards tab lists it as a
   pack (x 380, y 196, 1160 x 180, font 32). Every theme styles it; Windows 95 and Classic Mac title
@@ -1618,11 +1618,11 @@ starter test lists `live-description`.
 
 ### 4.21 Graphite design
 
-Alex's design. Technical design in [5.14.3](#5143-graphite-and-warm-amber-design).
+My design. Technical design in [5.14.3](#5143-graphite-and-warm-amber-design).
 
 User stories:
 
-- As the owner I get my Graphite look on the overlay, in the editor, and on my Stream Deck: graphite
+- I get my Graphite look on the overlay, in the editor, and on my Stream Deck: graphite
   panels with warm amber accents, readable on compressed video and at 72x72.
 - As a fresh install I start in Graphite.
 
@@ -4709,7 +4709,7 @@ text showing `{{room}}`) and `SHORT` timeouts of 300 ms.
 | `obs_module_ver()` | `MIN_OBS_VERSION = make_semantic_version(31, 1, 0)` |
 | `obs_module_name()` | `"Sceneuron"` |
 | `obs_module_description()` | `"AI-driven, editable live overlays that react to your camera."` |
-| `obs_module_author()` | `"Alexander Picon"` (confirm with the owner whether it should name Alexander Picon and Chaski AI; [10.4](#104-decisions-for-the-owner)) |
+| `obs_module_author()` | `"Alexander Picon"` (decide whether it should name Alexander Picon and Chaski AI; [10.4](#104-decisions-to-make)) |
 
 `obs_module_load` (main thread):
 
@@ -6231,7 +6231,7 @@ Plus, for changes in their areas: the MSRV check (`cargo check --workspace --all
 on 1.91); the browser flow and Stream Deck live test, every step passing; `streamdeck` `npm run
 check`, `npm test`, `npm run validate`; for docs, no em dashes, every relative link resolving, and
 the notice as the last line. At milestone ends: the OBS proof with every check passing in OBS 32,
-and (with the owner's approval, since they cost money) the live tests.
+and (with my approval, since they cost money) the live tests.
 
 ## 8. Build, packaging, install, and release
 
@@ -6370,8 +6370,7 @@ Proprietary software; see LICENSE.
 | `project.json` schema | 4 |
 | Room module | SpacetimeDB 2.10.2 |
 
-Release scope, branding, release packages, update method, and support model are decisions for the
-owner (10.4).
+Release scope, branding, release packages, update method, and support model remain open (10.4).
 
 ## 9. Build order
 
@@ -6391,13 +6390,13 @@ milestone ends.
 | M8 | OBS plugin, first proof | `sceneuron-obs-sys` (5.9); `sceneuron-obs` lifecycle, `server.json`, overlay source with the private browser child, camera filter, vision bridge, settings source, Tools menu, element and automation hotkeys, vendor requests, logger, `ui.rs` (5.10) | obs and obs-sys tests; OBS proof R1 to R7, false triggers, resource use |
 | M9 | Packaging and license gate | `scripts/package.sh` (8.3), `sceneuron-notices` (5.12), `docs/development.md` license table | `sceneuron-notices --check` passes; the universal zip installs and loads in OBS |
 | M10 | AI providers and settings | `ai.json` (5.4.2), credentials, provider trait, HTTP transport, Gemini and OpenAI-compatible clients, JSON extraction, cost tables (5.4.3 to 5.4.7, 6.5); AI tab provider and key section | ai `settings*`, `credentials`, `gemini*`, `openai`, `cost`, `image` tests |
-| M11 | Scene understanding | core conditions and statuses (5.1.8); gate, director, judge prompt, status, sink, hub integration; Jev quick judge; Apple Vision perceiver with facts and novelty; AI tab scene card and conditions panel; demo AI | ai `gate*`, `director*`, `judge`, `quick`, `jev`, `hub` tests; vision-apple tests; OBS proof AI checks; one live Gemini vision call with the owner's approval |
+| M11 | Scene understanding | core conditions and statuses (5.1.8); gate, director, judge prompt, status, sink, hub integration; Jev quick judge; Apple Vision perceiver with facts and novelty; AI tab scene card and conditions panel; demo AI | ai `gate*`, `director*`, `judge`, `quick`, `jev`, `hub` tests; vision-apple tests; OBS proof AI checks; one live Gemini vision call with my approval |
 | M12 | Assistant plans | `EditPlan` (5.1.17), plan schema, planner prompt, assistant flow, `/api/ai/plan`, plan view, setup wizard, demo plans | ai `planner`, `plan_schema`, `assistant*`; browser `assistant-steps` |
 | M13 | Cards and outside control | decks, cards, covers, packs, `pack_for_canvas` (5.1.10, 5.1.11); control token, pairing, control view, control routes; card and deck hotkeys; vendor card requests; Cards tab | core `cards`, `decks`, `covers`, `packs*`; server `control*`, `pairing`, `packs`; OBS proof Cards checks |
 | M14 | Hand signals and votes by context | Apple Vision hand and body pose, finger counts, signs, pinch; `signal_summary`; camera signals, votes, context (5.1.12); Cards tab hand-signal editing and route line | core `signals`, `camera_*`, `votes`, `signal_context`; vision finger counts (a pinching hand gives no count); plugin `signals`; browser `hand-signal-steps` |
 | M15 | Stream Deck plugin | `streamdeck/` (5.13): actions, link, faces, pairing typed and by deep link, inspector, profiles for the 15-key deck and the XL, notices; editor pairing UI; `e2e/streamdeck-live.mjs` | plugin tests, `npm run validate`, every Stream Deck live step |
 | M16 | Shared planning poker room | `room/module` (5.8.1) and `sceneuron-room` (5.8.2, 5.8.3) with chosen codes, the summary with votes and average, and practice teammates; Room section; room keys; SpacetimeDB install and run scripts | room tests, module rule tests, browser `room-editor-steps`, every `e2e/room-live.mjs` step |
-| M17 | Voice control and spoken cards | `sceneuron-voice` (5.5); voice settings, voice link, matcher, hearing, push to talk (5.1.16, 5.4.13); TTS, speaker, speech cache, overlay audio; voice filter and microphone attach; AI tab Voice section | voice tests, ai `hub_voice`, `hub_speech`, `speaker*`, `tts`; dev voice tests; `e2e/voice-live.mjs` with the owner's approval |
+| M17 | Voice control and spoken cards | `sceneuron-voice` (5.5); voice settings, voice link, matcher, hearing, push to talk (5.1.16, 5.4.13); TTS, speaker, speech cache, overlay audio; voice filter and microphone attach; AI tab Voice section | voice tests, ai `hub_voice`, `hub_speech`, `speaker*`, `tts`; dev voice tests; `e2e/voice-live.mjs` with my approval |
 | M18 | Live subtitles and captions | subtitles core and languages (5.1.15), subtitle settings, translator, `follow_subtitles`, caption output (5.10.5), Subtitles pack and section | core `subtitles_*`; ai `translator*`, `hub_subtitles*`; plugin `captions`; OBS proof Subtitles checks |
 | M19 | Themes, reactions, camera preview, starter | themes (5.7.4); the ten reaction presets, tongue cue, facepalm, generated copies, Reaction key and Reactions page; camera preview tap and microphone list (Camera & mic tab); starter project and AI settings; Set up OBS for me with live-source checks and automatic Stream Deck pairing (5.10.4); the settings file; macOS-only declaration | web `themes`, `flood*`; core `reaction*`, `facepalm*`, `starter`; plugin `preview`, `starter`, `stream_deck`; server `setup_stream_deck`; OBS proof Mic, Preview, Starter, Setup checks |
 | M20 | Voice for anything | 4.19, 5.14.1 | the acceptance list in 4.19; browser and Stream Deck suites green |
@@ -6415,11 +6414,11 @@ subtitle tag `.sn-label`), the later merge adapts to the earlier.
 ### 10.1 Verify against external services
 
 - Gemini: run one setup plan and one translation (`e2e/subtitles-live.mjs`) against the real API
-  with the owner's approval, and record the answers, times, tokens, and costs. Check whether Gemini
+  with my approval, and record the answers, times, tokens, and costs. Check whether Gemini
   takes the plan schema (44 optional properties, 4 unions) as structured output; the fallback is
   specified in 5.4.5.
 - Gemini voice commands: run one addressed command that no local command matches through the real
-  planner model (low effort, 45 s timeout) with the owner's approval.
+  planner model (low effort, 45 s timeout) with my approval.
 - Gemini vision: check `gemini-3.5-flash-lite`'s thumbs-up false positive ("holding something up to
   the camera" for a thumbs up beside a laptop, 2 of 3 runs in the benchmark of 4.3) against a
   condition's `confirm` count.
@@ -6440,7 +6439,7 @@ subtitle tag `.sn-label`), the later merge adapts to the earlier.
 - ElevenLabs pricing: confirm the realtime keyterm surcharge ($0.05 an hour for Scribe v2) on an
   invoice; confirm the default voice "George" (missing from accounts created after March 2026;
   default voices expire 2026-12-31).
-- Subtitles live: run `e2e/subtitles-live.mjs` once with the owner's approval.
+- Subtitles live: run `e2e/subtitles-live.mjs` once with my approval.
 - SpacetimeDB: the room across two computers, over TLS (`https`, `wss`, rustls with the bundled
   roots), and on Maincloud.
 - Stream Deck app: one-click pairing by deep link and the automatic pairing link from OBS and Set up
@@ -6526,17 +6525,17 @@ Accepted limits to keep in mind:
   control view, which the server does not send; the post-load log names the configured port even
   after a fallback; the camera filter's text should say frames are offered at most once a second.
 
-### 10.4 Decisions for the owner
+### 10.4 Decisions to make
 
 | Decision | Options |
 | --- | --- |
 | B1 first release scope; B11 branding and final name; B12 release packages, update method, support model; B13 bridge license, socket protocol, and how frames, audio, and the overlay cross it | Open |
-| Starter Meeting signals reads only thumbs; give the starter the pack's five signs? | Owner's call |
+| Starter Meeting signals reads only thumbs; give the starter the pack's five signs? | Open |
 | A native renderer (B4) or a C++ shell that creates the editor dock | Open |
-| `obs_module_author()` returns `"Alexander Picon"`; name Alexander Picon and Chaski AI like the license? | Owner's call |
+| `obs_module_author()` returns `"Alexander Picon"`; name Alexander Picon and Chaski AI like the license? | Open |
 | A switch of its own for AI voice commands, so always-on remarks cost nothing without removing the key | Open |
 | Ship the vision benchmark's photo set (public domain, CC0, CC BY, and CC BY-SA from Wikimedia Commons) with attributions, or keep only the method | Open |
 | A media resolution setting for Gemini images (1,100 tokens at default, 527 medium, 264 low) | Out of scope until decided |
-| MHacks: confirm eligibility and MLH's public-code rule against the proprietary license before submission | Owner's call |
+| MHacks: confirm eligibility and MLH's public-code rule against the proprietary license before submission | Open |
 
 Copyright (c) 2026 Alexander Picon, Chaski AI (https://chaski.ai). All rights reserved. Proprietary software.

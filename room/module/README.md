@@ -25,7 +25,7 @@ the checks for room codes, names, and card ids, which need no database.
 ## License
 
 The module's own code is part of Sceneuron, which is proprietary software of Alexander Picon and
-Chaski AI, as the owner decided on 2026-10-03; see [LICENSE](../../LICENSE). `Cargo.toml` names them
+Chaski AI; see [LICENSE](../../LICENSE). `Cargo.toml` names them
 as its authors and `LICENSE` as its license file.
 
 A SpacetimeDB module has to be built against SpacetimeDB's module crates: the `spacetimedb` crate

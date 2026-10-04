@@ -517,7 +517,7 @@ Pass `--dev-binary PATH`, `--voice-id ID`, `--work-dir DIR`, or `--keep` as for 
 
 ## Linux and Windows
 
-Sceneuron is Mac-only for now, by the owner's decision of 2026-10-03; Windows and Linux are
+Sceneuron has targeted macOS only since 2026-10-03; Windows and Linux are
 planned, coming very soon. Every test here runs on macOS. The headless libobs load test on Linux,
 which loaded a Linux build of the plugin into libobs in a Docker container, was removed from `main`
 with the other Linux and Windows code paths. The last `main` with it is the pushed tag

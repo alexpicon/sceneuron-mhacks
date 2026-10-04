@@ -16,7 +16,7 @@ Sceneuron helps people communicate during video calls through cards, captions, c
 | Check what passed and what still needs a person | [Verification guide](verification.md) |
 | See the remaining work | [Current backlog](backlog.md) |
 | Present the product in a short demo | [Demo guide](pitch.md) |
-| Read the owner's account of how the work was made | [Provenance](provenance.md) |
+| See how the work was made | [Provenance](provenance.md) |
 
 ## What runs where
 

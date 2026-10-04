@@ -47,5 +47,5 @@
 <text x="632" y="454" fill="#f2f0ed" font-size="20" font-weight="700" letter-spacing="0" font-family="Inter, ui-sans-serif, system-ui, -apple-system, sans-serif">Call output</text>
 <text x="632" y="480" fill="#b9b2c2" font-size="14" font-weight="400" letter-spacing="0" font-family="Inter, ui-sans-serif, system-ui, -apple-system, sans-serif">Cards and captions</text>
 <text x="632" y="505" fill="#b9b2c2" font-size="14" font-weight="400" letter-spacing="0" font-family="Inter, ui-sans-serif, system-ui, -apple-system, sans-serif">remain readable</text>
-<rect x="54" y="541" width="1092" height="39" rx="12" fill="#242129" stroke="#4b4254" /><text x="73" y="566" fill="#b99bf0" font-size="15" font-weight="600" letter-spacing="0" font-family="Inter, ui-sans-serif, system-ui, -apple-system, sans-serif">The apps stay installed for the owner's test.</text>
+<rect x="54" y="541" width="1092" height="39" rx="12" fill="#242129" stroke="#4b4254" /><text x="73" y="566" fill="#b99bf0" font-size="15" font-weight="600" letter-spacing="0" font-family="Inter, ui-sans-serif, system-ui, -apple-system, sans-serif">Test the installed apps before accepting the result.</text>
 </svg>

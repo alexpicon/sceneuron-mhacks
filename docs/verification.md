@@ -1,6 +1,6 @@
 # Verification guide
 
-Use this guide before asking the owner to accept a commit candidate. Automated checks prove code paths; the last gate is the owner's test in OBS and on the physical Stream Deck.
+Use this guide before accepting a commit candidate. Automated checks prove code paths; the last gate is a hands-on test in OBS and on the physical Stream Deck.
 
 ![Checks move from source to two installed plugins and a person](graphics/verification.svg)
 
@@ -48,7 +48,7 @@ The browser flow checks the editor and overlay with simulated AI. The Stream Dec
 
 ![The final acceptance path is a real person using the two apps](graphics/manual-gate.svg)
 
-The OBS log and Stream Deck log have confirmed load and automatic pairing in this workspace. The physical camera, microphone, and device interaction remain the owner's manual check before a commit.
+The OBS log and Stream Deck log have confirmed load and automatic pairing in this workspace. A physical camera, microphone, and Stream Deck still need a hands-on check before a commit.
 
 ## Checks with special conditions
 

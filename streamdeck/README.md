@@ -23,8 +23,8 @@ are up, whether the camera or voice raised them, whether a shared room covers th
 lower by themselves, which elements show or hold a manual change, and whether automation is paused.
 It cannot change the project, see the camera, read the room's people or votes, or read the AI
 settings, what the AI sees or hears, or the recent events. Holding push to talk never turns voice
-control on or changes consent: audio goes anywhere only after the owner turned voice control on and
-consented in the editor.
+control on or changes consent: audio goes anywhere only after voice control is enabled and consent
+is granted in the editor.
 
 The plugin is part of Sceneuron, proprietary software of Alexander Picon and Chaski AI (see
 [LICENSE](../LICENSE)): `package.json` declares it `UNLICENSED` and private, and the manifest names

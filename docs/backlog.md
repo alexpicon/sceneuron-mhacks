@@ -16,7 +16,7 @@ This list separates implemented behavior from checks and design work that still 
 | OBS package | Native macOS library, bundle, notices, signature, and local load. | Release build, package validation, OBS log |
 | AI boundaries | Disabled defaults, separate consent and keys, scoped local tokens. | AI, server, and browser tests |
 
-## Before the owner accepts a commit
+## Before accepting a commit
 
 - Test a real camera and hand signals in OBS, including the case where meeting and poker signals could compete.
 - Test a real microphone with consent, push to talk, and spoken cards.
@@ -28,11 +28,11 @@ This list separates implemented behavior from checks and design work that still 
 
 - Make the OBS distribution boundary clear before public shipping. The current binary links libobs and is for private use and demos.
 - Extend platform support only after a supported build and test path exists for that platform.
-- Validate real cloud-provider plans and translations only with the owner's permission to use keys and credits.
+- Validate real cloud-provider plans and translations only after explicitly approving the use of keys and credits.
 - Keep the room's cross-machine and TLS behavior separate from the passing one-machine test.
 - Reconcile the component READMEs with this new documentation. Some still describe older test runs or image output paths. Keep the original `PLAN.md` intact.
 
-![A release decision follows evidence, a device test, and the owner's review](graphics/decision.svg)
+![A release decision follows evidence, a device test, and review](graphics/decision.svg)
 
 Do not infer that a simulated AI check proves a live provider, or that a fake Stream Deck proves the physical device. The [product brief](project-brief.md) describes what users can do; the [verification guide](verification.md) says what has been checked.
 

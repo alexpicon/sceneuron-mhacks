@@ -73,13 +73,11 @@ The [development guide](docs/development.md) adds the room module, browser, Stre
 | [Verification](docs/verification.md) | Automated and hands-on gates |
 | [Current backlog](docs/backlog.md) | Remaining work and checks |
 | [Demo guide](docs/pitch.md) | A professional-first demo |
-| [Provenance](docs/provenance.md) | The owner's account of the plan and implementation |
-
-The owner reports that Alexander Picon spent a couple of hours creating `PLAN.md` with Fable 5.1 on UltraCode. GPT-6-Astra then implemented the plan with ultra effort and ultrafast enabled to meet the deadline. Details are in [provenance](docs/provenance.md).
+| [Provenance](docs/provenance.md) | How the plan and implementation came together |
 
 ## License
 
-Sceneuron is proprietary software of Alexander Picon and Chaski AI. [LICENSE](LICENSE) grants no use, copying, modification, or distribution without written permission. Third-party components keep their own licenses. The OBS plugin links libobs, so its current binary is for the owner's own use and demos. See [development](docs/development.md#license-gate) before packaging it for anyone else.
+Sceneuron is proprietary software of Alexander Picon and Chaski AI. [LICENSE](LICENSE) grants no use, copying, modification, or distribution without written permission. Third-party components keep their own licenses. The OBS plugin links libobs, so its current binary is for private use and demos. See [development](docs/development.md#license-gate) before packaging it for anyone else.
 
 Copyright (c) 2026 Alexander Picon, Chaski AI (https://chaski.ai). All rights reserved.
 Proprietary software; see [LICENSE](LICENSE).

@@ -10,7 +10,7 @@
  * reaching it since, which includes a hold that failed after Sceneuron may have taken it. An owed
  * let-go that fails is tried again after 1, 2, and 4 s while the link stays connected, and again
  * each time the link connects after a drop. Holding never turns voice control on: audio goes
- * anywhere only when the owner turned it on and consented in the editor.
+ * anywhere only when voice control is enabled and consent is granted in the editor.
  */
 
 import { ApiError } from "./api.ts";

@@ -27,7 +27,7 @@ Sceneuron puts these signals in OBS's composed output. The participant can keep 
 - The shared room uses SpacetimeDB. Vote values remain private until reveal.
 - The current OBS plugin targets macOS and has been loaded in OBS. A physical camera, microphone, and Stream Deck remain the final manual checks.
 
-Keep an untested provider or device out of the live path. The [verification guide](verification.md) names the evidence for each step. The [provenance page](provenance.md) records the owner's account of the plan and implementation.
+Keep an untested provider or device out of the live path. The [verification guide](verification.md) names the evidence for each step. The [provenance page](provenance.md) explains how the plan and implementation came together.
 
 Copyright (c) 2026 Alexander Picon, Chaski AI (https://chaski.ai). All rights reserved.
 Proprietary software; see [LICENSE](../LICENSE).

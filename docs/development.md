@@ -114,7 +114,7 @@ The check rejects a shipped crate whose license is outside the allowed set or ca
 
 An `OR` expression needs an allowed branch, and every branch of an `AND` expression must be allowed. A license-file-only declaration is refused because the gate cannot classify it. The list is defined in `crates/sceneuron-notices/src/gate.rs` and checked against this section by a test.
 
-Sceneuron itself is proprietary under [LICENSE](../LICENSE). The current OBS binary links libobs, so its package is for the owner's own use and demos, not public distribution in its current form. The [backlog](backlog.md) keeps the distribution boundary visible.
+Sceneuron itself is proprietary under [LICENSE](../LICENSE). The current OBS binary links libobs, so its package is for private use and demos, not public distribution in its current form. The [backlog](backlog.md) keeps the distribution boundary visible.
 
 ## Recover a failed run
 

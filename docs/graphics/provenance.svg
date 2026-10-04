@@ -3,7 +3,7 @@
 
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="640" viewBox="0 0 1200 640" role="img" aria-labelledby="title desc">
 <title id="title">From plan to test</title>
-<desc id="desc">The project owner's account of roles in this build.</desc>
+<desc id="desc">Planning, implementation, and hands-on testing.</desc>
 <defs>
 <linearGradient id="background" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#201b28"/><stop offset=".58" stop-color="#17151b"/><stop offset="1" stop-color="#121216"/></linearGradient>
 <linearGradient id="card" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#2b2732"/><stop offset="1" stop-color="#201e25"/></linearGradient>
@@ -18,7 +18,7 @@
 <rect x="54" y="48" width="7" height="70" rx="3" fill="#d6a76c" stroke="none" />
 <text x="78" y="61" fill="#d6a76c" font-size="13" font-weight="700" letter-spacing="3" font-family="Inter, ui-sans-serif, system-ui, -apple-system, sans-serif">SCENEURON / SYSTEM</text>
 <text x="78" y="108" fill="#f2f0ed" font-size="38" font-weight="750" letter-spacing="0" font-family="Inter, ui-sans-serif, system-ui, -apple-system, sans-serif">From plan to test</text>
-<text x="80" y="143" fill="#b9b2c2" font-size="17" font-weight="400" letter-spacing="0" font-family="Inter, ui-sans-serif, system-ui, -apple-system, sans-serif">The project owner's account of roles in this build.</text>
+<text x="80" y="143" fill="#b9b2c2" font-size="17" font-weight="400" letter-spacing="0" font-family="Inter, ui-sans-serif, system-ui, -apple-system, sans-serif">Planning, implementation, and hands-on testing.</text>
 <path d="M 54 171 L 1146 171" fill="none" stroke="#4b4254" stroke-width="1" />
 <path d="M 54 594 L 1146 594" fill="none" stroke="#4b4254" stroke-width="1" />
 <text x="55" y="619" fill="#8f879b" font-size="12" font-weight="700" letter-spacing="2.5" font-family="Inter, ui-sans-serif, system-ui, -apple-system, sans-serif">SCENEURON</text>
@@ -28,7 +28,7 @@
 <rect x="54" y="215" width="345.3333333333333" height="285" rx="19" fill="url(#card)" stroke="#4b4254" filter="url(#shadow)"/>
 <rect x="72" y="232" width="45" height="4" rx="2" fill="#b99bf0" stroke="none" />
 <text x="74" y="273" fill="#b99bf0" font-size="15" font-weight="700" letter-spacing="2.5" font-family="Inter, ui-sans-serif, system-ui, -apple-system, sans-serif">01</text>
-<text x="74" y="315" fill="#f2f0ed" font-size="23" font-weight="700" letter-spacing="0" font-family="Inter, ui-sans-serif, system-ui, -apple-system, sans-serif">Alexander + Fable</text>
+<text x="74" y="315" fill="#f2f0ed" font-size="23" font-weight="700" letter-spacing="0" font-family="Inter, ui-sans-serif, system-ui, -apple-system, sans-serif">Plan with Fable</text>
 <text x="74" y="354" fill="#b9b2c2" font-size="16" font-weight="400" letter-spacing="0" font-family="Inter, ui-sans-serif, system-ui, -apple-system, sans-serif">PLAN.md in UltraCode</text>
 <text x="74" y="379" fill="#b9b2c2" font-size="16" font-weight="400" letter-spacing="0" font-family="Inter, ui-sans-serif, system-ui, -apple-system, sans-serif">about two hours</text>
 <rect x="427.3333333333333" y="215" width="345.3333333333333" height="285" rx="19" fill="url(#card)" stroke="#4b4254" filter="url(#shadow)"/>
@@ -40,7 +40,7 @@
 <rect x="800.6666666666666" y="215" width="345.3333333333333" height="285" rx="19" fill="url(#card)" stroke="#4b4254" filter="url(#shadow)"/>
 <rect x="818.6666666666666" y="232" width="45" height="4" rx="2" fill="#71d8a5" stroke="none" />
 <text x="820.6666666666666" y="273" fill="#71d8a5" font-size="15" font-weight="700" letter-spacing="2.5" font-family="Inter, ui-sans-serif, system-ui, -apple-system, sans-serif">03</text>
-<text x="820.6666666666666" y="315" fill="#f2f0ed" font-size="23" font-weight="700" letter-spacing="0" font-family="Inter, ui-sans-serif, system-ui, -apple-system, sans-serif">Owner test</text>
+<text x="820.6666666666666" y="315" fill="#f2f0ed" font-size="23" font-weight="700" letter-spacing="0" font-family="Inter, ui-sans-serif, system-ui, -apple-system, sans-serif">Hands-on test</text>
 <text x="820.6666666666666" y="354" fill="#b9b2c2" font-size="16" font-weight="400" letter-spacing="0" font-family="Inter, ui-sans-serif, system-ui, -apple-system, sans-serif">Installed apps</text>
 <text x="820.6666666666666" y="379" fill="#b9b2c2" font-size="16" font-weight="400" letter-spacing="0" font-family="Inter, ui-sans-serif, system-ui, -apple-system, sans-serif">before a commit</text>
 <rect x="54" y="541" width="1092" height="39" rx="12" fill="#242129" stroke="#4b4254" /><text x="73" y="566" fill="#d6a76c" font-size="15" font-weight="600" letter-spacing="0" font-family="Inter, ui-sans-serif, system-ui, -apple-system, sans-serif">The plan was complete before the implementation began.</text>

@@ -15,13 +15,13 @@ const hub = (name, title, subtitle, center, items, note, tone = "amber") =>
   ({ name, title, subtitle, center, items, note, tone, kind: "hub" });
 
 writeDiagrams([
-  grid("docs-map", "Find the right guide", "One subject per page, from first use to owner review.", [
+  grid("docs-map", "Find the right guide", "One subject per page, from first use to final review.", [
     withTone("amber", "Product", "Professional call flows", "and creative use"),
     withTone("violet", "Install", "Build both plugins", "and pair them"),
     withTone("cyan", "Design", "State, trust, and", "component boundaries"),
     withTone("green", "Develop", "Locked builds and", "local checks"),
     withTone("rose", "API", "Token scopes and", "control routes"),
-    withTone("amber", "Verify", "App logs, hardware,", "and owner acceptance"),
+    withTone("amber", "Verify", "App logs, hardware,", "and final acceptance"),
   ], "The pitch, backlog, and provenance pages complete the map."),
 
   flow("professional-flow", "One clear signal in the call", "The primary path serves meetings, planning, and classes.", [
@@ -38,10 +38,10 @@ writeDiagrams([
     withTone("green", "Lower", "Press again or", "let time expire"),
   ], "The input changes live state; it does not silently edit the layout."),
 
-  flow("provenance", "From plan to test", "The project owner's account of roles in this build.", [
-    withTone("violet", "Alexander + Fable", "PLAN.md in UltraCode", "about two hours"),
+  flow("provenance", "From plan to test", "Planning, implementation, and hands-on testing.", [
+    withTone("violet", "Plan with Fable", "PLAN.md in UltraCode", "about two hours"),
     n("GPT-6-Astra", "Ultra effort and", "ultrafast build"),
-    withTone("green", "Owner test", "Installed apps", "before a commit"),
+    withTone("green", "Hands-on test", "Installed apps", "before a commit"),
   ], "The plan was complete before the implementation began."),
 
   hub("system-map", "One engine, several hosts", "Each component has one job and one path to shared state.",
@@ -82,7 +82,7 @@ writeDiagrams([
     withTone("violet", "Unit tests", "Rust, JavaScript,", "and Stream Deck"),
     withTone("cyan", "Local flows", "Browser, room,", "fake device"),
     n("Installed apps", "OBS loads and the", "Deck pairs"),
-    withTone("green", "Owner", "Camera, mic, keys,", "and call output"),
+    withTone("green", "Hands-on test", "Camera, mic, keys,", "and call output"),
   ], "Re-run affected checks after every source change."),
 
   lanes("install-paths", "Two installs, one system", "Build each plugin, then connect them on this Mac.", [
@@ -115,23 +115,23 @@ writeDiagrams([
     withTone("cyan", "Packages", "Validate the two", "plugin artifacts"),
     n("Apps", "OBS loads; Deck", "starts and pairs"),
     withTone("green", "Person", "Uses camera, mic,", "keys, and video"),
-  ], "Only the owner accepts the final commit candidate."),
+  ], "Accept the commit candidate after the hands-on test."),
 
   grid("manual-gate", "The hands-on gate", "A person checks what simulation cannot prove.", [
     withTone("amber", "Camera", "Preview and chosen", "source in OBS"),
     withTone("violet", "Microphone", "Consent and push", "to talk behavior"),
     withTone("cyan", "Physical Deck", "Profile, key press,", "and pairing"),
     withTone("green", "Call output", "Cards and captions", "remain readable"),
-  ], "The apps stay installed for the owner's test."),
+  ], "Test the installed apps before accepting the result."),
 
   flow("release-gates", "A commit follows a tested build", "Current checks lead to a person, then to a release decision.", [
     withTone("violet", "Automated", "All affected suites", "pass again"),
     withTone("cyan", "Installed", "OBS and Deck load", "and pair"),
-    n("Owner test", "Use real input and", "video output"),
+    n("Hands-on test", "Use real input and", "video output"),
     withTone("green", "Commit", "Review files only", "after acceptance"),
   ], "Provider live tests and public distribution have separate gates."),
 
-  flow("decision", "One accountable decision", "Evidence stays distinct from the owner's judgment.", [
+  flow("decision", "One accountable decision", "Evidence supports the release decision.", [
     withTone("cyan", "Evidence", "Builds, tests,", "and app logs"),
     n("Review", "Physical workflow", "and open limits"),
     withTone("green", "Accept", "Commit or return", "to fixes"),
@@ -167,10 +167,10 @@ writeDiagrams([
       withTone("rose", "Shared room", "Private then revealed"),
     ], "Optional AI and voice require their own settings and consent.", "amber"),
 
-  flow("readme-checks", "From build to owner test", "Each step protects the final call workflow.", [
+  flow("readme-checks", "From build to hands-on test", "Each step protects the final call workflow.", [
     withTone("violet", "Locked inputs", "Cargo and npm", "versions fixed"),
     withTone("cyan", "Suites", "Rust, browser,", "room, and Deck"),
     n("Two plugins", "OBS loads; Deck", "pairs on loopback"),
-    withTone("green", "Owner", "Tests the real", "camera and keys"),
-  ], "The commit waits until the owner accepts the installed result."),
+    withTone("green", "Hands-on test", "Tests the real", "camera and keys"),
+  ], "Commit after testing the installed apps."),
 ]);
