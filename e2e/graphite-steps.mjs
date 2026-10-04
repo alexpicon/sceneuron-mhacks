@@ -3,7 +3,7 @@
 
 // Graphite steps of the browser regression test (editor-browser.mjs): the Graphite theme draws a raised card with
 // its icon in an amber tile and its words without the emoji, edges a regular card in amber, and gives the name
-// label its amber bar and icon; and the on-air pill and timer follow sceneuron-dev's simulated OBS: LIVE with an
+// label its amber bar and icon; shares the colorful emoji reactions; and the on-air pill and timer follow simulated OBS: LIVE with an
 // amber dot and a counting timer while it streams, the scene alone with a gray dot and 00:00:00 when it stops.
 // They run after the theme steps, against the project those saved, which has the meeting and poker decks, and leave
 // it as they found it, on None.
@@ -64,6 +64,20 @@ export async function runGraphiteSteps({ page, overlay, server, step, same, api 
     } finally {
       await api("POST", "/api/card", { deck: "meeting", action: "lower" });
       await api("POST", "/api/card", { deck: "poker", action: "lower" });
+    }
+  });
+
+  await step("Graphite shows the shared colorful emoji reaction", async () => {
+    await save("graphite");
+    const layer = "#overlay-root > .sn-flood";
+    await overlay.send("Page.bringToFront");
+    try {
+      await api("POST", "/api/flood", { flood: "email" });
+      await waitFor("the Graphite emoji flood", async () => (await count(`${layer} span`)) === 94);
+      same(await overlay.text(`${layer} .sn-flood-banner`), "📧 This meeting could have been an email 🤦", "banner");
+      same(await style(`${layer} .sn-flood-banner`, "backgroundColor"), "rgb(29, 78, 216)", "preset color");
+    } finally {
+      await waitFor("the flood to end", async () => (await count(layer)) === 0, 5_000);
     }
   });
 
